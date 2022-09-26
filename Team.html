@@ -1,0 +1,1763 @@
+<html>
+<body>
+Game:
+<select id="game" onchange="gameChange()">
+<option value="red">Red</option>
+<option value="blue">Blue</option>
+<option value="yellow">Yellow</option>
+<option value="gold">Gold</option>
+<option value="silver">Silver</option>
+<option value="crystal">Crystal</option>
+<option value="ruby">Ruby</option>
+<option value="sapphire">Sapphire</option>
+<option value="emerald">Emerald</option>
+<option value="fireRed">Fire Red</option>
+<option value="leafGreen">Leaf Green</option>
+</select>
+<br>
+<table>
+<tr>
+<td>
+Starters:
+<input type="radio" name="starter" id="starterDisallow" checked="true">Disallow
+<input type="radio" name="starter" id="starterAllow">Allow
+<input type="radio" name="starter" id="starterGuarantee" onchange="starterChange()">Guarantee
+<br>
+Trade Evolutions:
+<input type="radio" name="trade" id="tradeDisallowSelecting" checked="true">Disallow Selecting
+<input type="radio" name="trade" id="tradeDisallowEvolving">Disallow Evolving
+<input type="radio" name="trade" id="tradeAllow">Allow
+<br>
+Legendaries:
+<input type="radio" name="legendary" id="legendaryDisallow" checked="true">Disallow
+<input type="radio" name="legendary" id="legendaryAllow">Allow
+<br>
+Duplicate Types:
+<input type="radio" name="type" id="typeAllow" checked="true">Allow
+<input type="radio" name="type" id="typeDisallowExactMatch">Disallow Exact Match
+<input type="radio" name="type" id="typeDisallowOverlap">Disallow Overlap
+<br>
+Blacklist:
+<br>
+<textarea id="blacklist" rows="4"></textarea>
+</td>
+<td>
+Number of Pokemon Guaranteed by Badge:
+<br>
+<table>
+<tr>
+<td>
+1:
+<select id="badge1" onchange="updateBadges(1)">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+</select>
+<br>
+2:
+<select id="badge2" onchange="updateBadges(2)">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+</select>
+<br>
+3:
+<select id="badge3" onchange="updateBadges(3)">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+</select>
+<br>
+4:
+<select id="badge4"  onchange="updateBadges(4)">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+</select>
+<br>
+5:
+<select id="badge5"  onchange="updateBadges(5)">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+</select>
+<br>
+6:
+<select id="badge6" onchange="updateBadges(6)">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+</select>
+<br>
+7:
+<select id="badge7" onchange="updateBadges(7)">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+</select>
+<br>
+8:
+<select id="badge8" onchange="updateBadges(8)">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+</select>
+</td>
+<td>
+<div id="johto" hidden="true">
+9:
+<select id="badge9" onchange="updateBadges(9)">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+</select>
+<br>
+10:
+<select id="badge10" onchange="updateBadges(10)">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+</select>
+<br>
+11:
+<select id="badge11" onchange="updateBadges(11)">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+</select>
+<br>
+12:
+<select id="badge12"  onchange="updateBadges(12)">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+</select>
+<br>
+13:
+<select id="badge13"  onchange="updateBadges(13)">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+</select>
+<br>
+14:
+<select id="badge14" onchange="updateBadges(14)">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+</select>
+<br>
+15:
+<select id="badge15" onchange="updateBadges(15)">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+</select>
+<br>
+16:
+<select id="badge16" onchange="updateBadges(16)">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+</select>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<canvas id="team" width="336" height="56" style="border:1px solid #d3d3d3;"></canvas>
+<br>
+<button onclick="generate()">Generate Team</button>
+<script>
+var allpokemon =
+{red: [{name: "Venusaur", sort: 1, categories: ["Starter"], badges: 0, blocks: ["Charizard", "Blastoise"]},
+ {name: "Charizard", sort: 2, categories: ["Starter"], badges: 0, blocks: ["Venusaur", "Blastoise"]},
+ {name: "Blastoise", sort: 3, categories: ["Starter"], badges: 0, blocks: ["Venusaur", "Charizard"]},
+ {name: "Pidgeot", sort: 4, categories: [], badges: 0, blocks: []},
+ {name: "Raticate", sort: 5, categories: [], badges: 0, blocks: []},
+ {name: "Nidoking", sort: 6, categories: [], badges: 0, blocks: []},
+ {name: "Fearow", sort: 7, categories: [], badges: 0, blocks: []},
+ {name: "Nidoqueen", sort: 8, categories: [], badges: 0, blocks: []},
+ {name: "Beedrill", sort: 9, categories: [], badges: 0, blocks: []},
+ {name: "Butterfree", sort: 10, categories: [], badges: 0, blocks: []},
+ {name: "Raichu", sort: 11, categories: [], badges: 0, blocks: []},
+ {name: "Wigglytuff", sort: 12, categories: [], badges: 1, blocks: []},
+ {name: "Gyarados", sort: 13, categories: [], badges: 1, blocks: []},
+ {name: "Golbat", sort: 14, categories: [], badges: 1, blocks: []},
+ {name: "Graveler", sort: 15, categories: ["Trade1"], badges: 1, blocks: []},
+ {name: "Golem", sort: 16, categories: ["Trade2"], badges: 1, blocks: []},
+ {name: "Parasect", sort: 17, categories: [], badges: 1, blocks: []},
+ {name: "Clefable", sort: 18, categories: [], badges: 1, blocks: []},
+ {name: "Arbok", sort: 19, categories: [], badges: 1, blocks: []},
+ {name: "Vileplume", sort: 20, categories: [], badges: 1, blocks: []},
+ {name: "Kadabra", sort: 21, categories: ["Trade1"], badges: 1, blocks: []},
+ {name: "Alakazam", sort: 22, categories: ["Trade2"], badges: 1, blocks: []},
+ {name: "Primeape", sort: 23, categories: [], badges: 2, blocks: []},
+ {name: "Farfetch'd", sort: 24, categories: [], badges: 2, blocks: []},
+ {name: "Hypno", sort: 25, categories: [], badges: 2, blocks: []},
+ {name: "Dugtrio", sort: 26, categories: [], badges: 2, blocks: []},
+ {name: "Mr. Mime", sort: 27, categories: [], badges: 2, blocks: []},
+ {name: "Electrode", sort: 28, categories: [], badges: 3, blocks: []},
+ {name: "Machoke", sort: 29, categories: ["Trade1"], badges: 3, blocks: []},
+ {name: "Machamp", sort: 30, categories: ["Trade2"], badges: 3, blocks: []},
+ {name: "Onix", sort: 31, categories: [], badges: 3, blocks: []},
+ {name: "Arcanine", sort: 32, categories: [], badges: 3, blocks: []},
+ {name: "Vaporeon", sort: 33, categories: [], badges: 3, blocks: ["Jolteon", "Flareon"]},
+ {name: "Jolteon", sort: 34, categories: [], badges: 3, blocks: ["Vaporeon", "Flareon"]},
+ {name: "Flareon", sort: 35, categories: [], badges: 3, blocks: ["Vaporeon", "Jolteon"]},
+ {name: "Dragonite", sort: 36, categories: [], badges: 3, blocks: []},
+ {name: "Scyther", sort: 37, categories: [], badges: 3, blocks: []},
+ {name: "Porygon", sort: 38, categories: [], badges: 3, blocks: []},
+ {name: "Dodrio", sort: 39, categories: [], badges: 3, blocks: []},
+ {name: "Hitmonlee", sort: 40, categories: [], badges: 3, blocks: ["Hitmonchan"]},
+ {name: "Hitmonchan", sort: 41, categories: [], badges: 3, blocks: ["Hitmonlee"]},
+ {name: "Haunter", sort: 42, categories: ["Trade1"], badges: 4, blocks: []},
+ {name: "Gengar", sort: 43, categories: ["Trade2"], badges: 4, blocks: []},
+ {name: "Marowak", sort: 44, categories: [], badges: 4, blocks: []},
+ {name: "Snorlax", sort: 45, categories: [], badges: 4, blocks: []},
+ {name: "Venomoth", sort: 46, categories: [], badges: 4, blocks: []},
+ {name: "Ditto", sort: 47, categories: [], badges: 4, blocks: []},
+ {name: "Poliwrath", sort: 48, categories: [], badges: 4, blocks: []},
+ {name: "Seaking", sort: 49, categories: [], badges: 4, blocks: []},
+ {name: "Jynx", sort: 50, categories: [], badges: 4, blocks: []},
+ {name: "Golduck", sort: 51, categories: [], badges: 4, blocks: []},
+ {name: "Tentacruel", sort: 52, categories: [], badges: 4, blocks: []},
+ {name: "Slowbro", sort: 53, categories: [], badges: 4, blocks: []},
+ {name: "Cloyster", sort: 54, categories: [], badges: 4, blocks: []},
+ {name: "Kingler", sort: 55, categories: [], badges: 4, blocks: []},
+ {name: "Seadra", sort: 56, categories: [], badges: 4, blocks: []},
+ {name: "Starmie", sort: 57, categories: [], badges: 4, blocks: []},
+ {name: "Lickitung", sort: 58, categories: [], badges: 4, blocks: []},
+ {name: "Exeggutor", sort: 59, categories: [], badges: 4, blocks: []},
+ {name: "Rhydon", sort: 60, categories: [], badges: 4, blocks: []},
+ {name: "Kangaskhan", sort: 61, categories: [], badges: 4, blocks: []},
+ {name: "Chansey", sort: 62, categories: [], badges: 4, blocks: []},
+ {name: "Tauros", sort: 63, categories: [], badges: 4, blocks: []},
+ {name: "Tangela", sort: 64, categories: [], badges: 5, blocks: []},
+ {name: "Dewgong", sort: 65, categories: [], badges: 5, blocks: []},
+ {name: "Articuno", sort: 66, categories: ["Legendary"], badges: 5, blocks: []},
+ {name: "Magneton", sort: 67, categories: [], badges: 5, blocks: []},
+ {name: "Electabuzz", sort: 68, categories: [], badges: 5, blocks: []},
+ {name: "Zapdos", sort: 69, categories: ["Legendary"], badges: 5, blocks: []},
+ {name: "Lapras", sort: 70, categories: [], badges: 5, blocks: []},
+ {name: "Omastar", sort: 71, categories: [], badges: 6, blocks: ["Kabutops"]},
+ {name: "Kabutops", sort: 72, categories: [], badges: 6, blocks: ["Omastar"]},
+ {name: "Aerodactyl", sort: 73, categories: [], badges: 6, blocks: []},
+ {name: "Rapidash", sort: 74, categories: [], badges: 6, blocks: []},
+ {name: "Weezing", sort: 75, categories: [], badges: 6, blocks: []},
+ {name: "Muk", sort: 76, categories: [], badges: 6, blocks: []},
+ {name: "Moltres", sort: 77, categories: ["Legendary"], badges: 8, blocks: []}
+],
+ blue: [{name: "Venusaur", sort: 1, categories: ["Starter"], badges: 0, blocks: ["Charizard", "Blastoise"]},
+ {name: "Charizard", sort: 2, categories: ["Starter"], badges: 0, blocks: ["Venusaur", "Blastoise"]},
+ {name: "Blastoise", sort: 3, categories: ["Starter"], badges: 0, blocks: ["Venusaur", "Charizard"]},
+ {name: "Pidgeot", sort: 4, categories: [], badges: 0, blocks: []},
+ {name: "Raticate", sort: 5, categories: [], badges: 0, blocks: []},
+ {name: "Nidoqueen", sort: 6, categories: [], badges: 0, blocks: []},
+ {name: "Fearow", sort: 7, categories: [], badges: 0, blocks: []},
+ {name: "Nidoking", sort: 8, categories: [], badges: 0, blocks: []},
+ {name: "Butterfree", sort: 9, categories: [], badges: 0, blocks: []},
+ {name: "Beedrill", sort: 10, categories: [], badges: 0, blocks: []},
+ {name: "Raichu", sort: 11, categories: [], badges: 0, blocks: []},
+ {name: "Wigglytuff", sort: 12, categories: [], badges: 1, blocks: []},
+ {name: "Gyarados", sort: 13, categories: [], badges: 1, blocks: []},
+ {name: "Golbat", sort: 14, categories: [], badges: 1, blocks: []},
+ {name: "Graveler", sort: 15, categories: ["Trade1"], badges: 1, blocks: []},
+ {name: "Golem", sort: 16, categories: ["Trade2"], badges: 1, blocks: []},
+ {name: "Parasect", sort: 17, categories: [], badges: 1, blocks: []},
+ {name: "Clefable", sort: 18, categories: [], badges: 1, blocks: []},
+ {name: "Sandslash", sort: 19, categories: [], badges: 1, blocks: []},
+ {name: "Victreebel", sort: 20, categories: [], badges: 1, blocks: []},
+ {name: "Kadabra", sort: 21, categories: ["Trade1"], badges: 1, blocks: []},
+ {name: "Alakazam", sort: 22, categories: ["Trade2"], badges: 1, blocks: []},
+ {name: "Persian", sort: 23, categories: [], badges: 2, blocks: []},
+ {name: "Farfetch'd", sort: 24, categories: [], badges: 2, blocks: []},
+ {name: "Hypno", sort: 25, categories: [], badges: 2, blocks: []},
+ {name: "Dugtrio", sort: 26, categories: [], badges: 2, blocks: []},
+ {name: "Mr. Mime", sort: 27, categories: [], badges: 2, blocks: []},
+ {name: "Electrode", sort: 28, categories: [], badges: 3, blocks: []},
+ {name: "Machoke", sort: 29, categories: ["Trade1"], badges: 3, blocks: []},
+ {name: "Machamp", sort: 30, categories: ["Trade2"], badges: 3, blocks: []},
+ {name: "Onix", sort: 31, categories: [], badges: 3, blocks: []},
+ {name: "Ninetales", sort: 32, categories: [], badges: 3, blocks: []},
+ {name: "Vaporeon", sort: 33, categories: [], badges: 3, blocks: ["Jolteon", "Flareon"]},
+ {name: "Jolteon", sort: 34, categories: [], badges: 3, blocks: ["Vaporeon", "Flareon"]},
+ {name: "Flareon", sort: 35, categories: [], badges: 3, blocks: ["Vaporeon", "Jolteon"]},
+ {name: "Pinsir", sort: 36, categories: [], badges: 3, blocks: []},
+ {name: "Dragonite", sort: 37, categories: [], badges: 3, blocks: []},
+ {name: "Porygon", sort: 38, categories: [], badges: 3, blocks: []},
+ {name: "Dodrio", sort: 39, categories: [], badges: 3, blocks: []},
+ {name: "Hitmonlee", sort: 40, categories: [], badges: 3, blocks: ["Hitmonchan"]},
+ {name: "Hitmonchan", sort: 41, categories: [], badges: 3, blocks: ["Hitmonlee"]},
+ {name: "Haunter", sort: 42, categories: ["Trade1"], badges: 4, blocks: []},
+ {name: "Gengar", sort: 43, categories: ["Trade2"], badges: 4, blocks: []},
+ {name: "Marowak", sort: 44, categories: [], badges: 4, blocks: []},
+ {name: "Snorlax", sort: 45, categories: [], badges: 4, blocks: []},
+ {name: "Venomoth", sort: 46, categories: [], badges: 4, blocks: []},
+ {name: "Ditto", sort: 47, categories: [], badges: 4, blocks: []},
+ {name: "Poliwrath", sort: 48, categories: [], badges: 4, blocks: []},
+ {name: "Seaking", sort: 49, categories: [], badges: 4, blocks: []},
+ {name: "Jynx", sort: 50, categories: [], badges: 4, blocks: []},
+ {name: "Golduck", sort: 51, categories: [], badges: 4, blocks: []},
+ {name: "Tentacruel", sort: 52, categories: [], badges: 4, blocks: []},
+ {name: "Slowbro", sort: 53, categories: [], badges: 4, blocks: []},
+ {name: "Cloyster", sort: 54, categories: [], badges: 4, blocks: []},
+ {name: "Kingler", sort: 55, categories: [], badges: 4, blocks: []},
+ {name: "Seadra", sort: 56, categories: [], badges: 4, blocks: []},
+ {name: "Starmie", sort: 57, categories: [], badges: 4, blocks: []},
+ {name: "Lickitung", sort: 58, categories: [], badges: 4, blocks: []},
+ {name: "Exeggutor", sort: 59, categories: [], badges: 4, blocks: []},
+ {name: "Rhydon", sort: 60, categories: [], badges: 4, blocks: []},
+ {name: "Kangaskhan", sort: 62, categories: [], badges: 4, blocks: []},
+ {name: "Chansey", sort: 62, categories: [], badges: 4, blocks: []},
+ {name: "Tauros", sort: 63, categories: [], badges: 4, blocks: []},
+ {name: "Tangela", sort: 64, categories: [], badges: 5, blocks: []},
+ {name: "Dewgong", sort: 65, categories: [], badges: 5, blocks: []},
+ {name: "Articuno", sort: 66, categories: ["Legendary"], badges: 5, blocks: []},
+ {name: "Magneton", sort: 67, categories: [], badges: 5, blocks: []},
+ {name: "Zapdos", sort: 68, categories: ["Legendary"], badges: 5, blocks: []},
+ {name: "Lapras", sort: 69, categories: [], badges: 5, blocks: []},
+ {name: "Omastar", sort: 70, categories: [], badges: 6, blocks: ["Kabutops"]},
+ {name: "Kabutops", sort: 71, categories: [], badges: 6, blocks: ["Omastar"]},
+ {name: "Aerodactyl", sort: 72, categories: [], badges: 6, blocks: []},
+ {name: "Rapidash", sort: 73, categories: [], badges: 6, blocks: []},
+ {name: "Muk", sort: 74, categories: [], badges: 6, blocks: []},
+ {name: "Weezing", sort: 75, categories: [], badges: 6, blocks: []},
+ {name: "Magmar", sort: 76, categories: [], badges: 6, blocks: []},
+ {name: "Moltres", sort: 77, categories: ["Legendary"], badges: 8, blocks: []}
+],
+yellow: [{name: "Pikachu", sort: 1, categories: ["Starter"], badges: 0, blocks: []},
+ {name: "Pidgeot", sort: 2, categories: [], badges: 0, blocks: []},
+ {name: "Raticate", sort: 3, categories: [], badges: 0, blocks: []},
+ {name: "Nidoking", sort: 4, categories: [], badges: 0, blocks: []},
+ {name: "Nidoqueen", sort: 5, categories: [], badges: 0, blocks: []},
+ {name: "Primeape", sort: 6, categories: [], badges: 0, blocks: []},
+ {name: "Fearow", sort: 7, categories: [], badges: 0, blocks: []},
+ {name: "Butterfree", sort: 8, categories: [], badges: 0, blocks: []},
+ {name: "Gyarados", sort: 9, categories: [], badges: 1, blocks: []},
+ {name: "Golbat", sort: 10, categories: [], badges: 1, blocks: []},
+ {name: "Graveler", sort: 11, categories: ["Trade1"], badges: 1, blocks: []},
+ {name: "Golem", sort: 12, categories: ["Trade2"], badges: 1, blocks: []},
+ {name: "Parasect", sort: 13, categories: [], badges: 1, blocks: []},
+ {name: "Clefable", sort: 14, categories: [], badges: 1, blocks: []},
+ {name: "Sandslash", sort: 15, categories: [], badges: 1, blocks: []},
+ {name: "Venusaur", sort: 16, categories: [], badges: 1, blocks: []},
+ {name: "Vileplume", sort: 17, categories: [], badges: 1, blocks: []},
+ {name: "Victreebel", sort: 18, categories: [], badges: 1, blocks: []},
+ {name: "Venomoth", sort: 19, categories: [], badges: 1, blocks: []},
+ {name: "Charizard", sort: 20, categories: [], badges: 1, blocks: []},
+ {name: "Kadabra", sort: 21, categories: ["Trade1"], badges: 2, blocks: []},
+ {name: "Alakazam", sort: 22, categories: ["Trade2"], badges: 2, blocks: []},
+ {name: "Wigglytuff", sort: 23, categories: [], badges: 2, blocks: []},
+ {name: "Hypno", sort: 24, categories: [], badges: 2, blocks: []},
+ {name: "Dugtrio", sort: 25, categories: [], badges: 2, blocks: []},
+ {name: "Mr. Mime", sort: 26, categories: [], badges: 2, blocks: []},
+ {name: "Blastoise", sort: 27, categories: [], badges: 3, blocks: []},
+ {name: "Magneton", sort: 28, categories: [], badges: 3, blocks: []},
+ {name: "Onix", sort: 29, categories: [], badges: 3, blocks: []},
+ {name: "Vaporeon", sort: 30, categories: [], badges: 3, blocks: ["Jolteon", "Flareon"]},
+ {name: "Jolteon", sort: 31, categories: [], badges: 3, blocks: ["Vaporeon", "Flareon"]},
+ {name: "Flareon", sort: 32, categories: [], badges: 3, blocks: ["Vaporeon", "Jolteon"]},
+ {name: "Ninetales", sort: 33, categories: [], badges: 3, blocks: []},
+ {name: "Scyther", sort: 34, categories: [], badges: 3, blocks: []},
+ {name: "Pinsir", sort: 35, categories: [], badges: 3, blocks: []},
+ {name: "Porygon", sort: 36, categories: [], badges: 3, blocks: []},
+ {name: "Dodrio", sort: 37, categories: [], badges: 3, blocks: []},
+ {name: "Hitmonlee", sort: 38, categories: [], badges: 3, blocks: ["Hitmonchan"]},
+ {name: "Hitmonchan", sort: 39, categories: [], badges: 3, blocks: ["Hitmonlee"]},
+ {name: "Haunter", sort: 40, categories: ["Trade1"], badges: 4, blocks: []},
+ {name: "Gengar", sort: 41, categories: ["Trade2"], badges: 4, blocks: []},
+ {name: "Marowak", sort: 42, categories: [], badges: 4, blocks: []},
+ {name: "Machamp", sort: 43, categories: [], badges: 4, blocks: []},
+ {name: "Snorlax", sort: 44, categories: [], badges: 4, blocks: []},
+ {name: "Rapidash", sort: 45, categories: [], badges: 4, blocks: []},
+ {name: "Farfetch'd", sort: 46, categories: [], badges: 4, blocks: []},
+ {name: "Poliwrath", sort: 47, categories: [], badges: 4, blocks: []},
+ {name: "Seaking", sort: 48, categories: [], badges: 4, blocks: []},
+ {name: "Tentacruel", sort: 49, categories: [], badges: 4, blocks: []},
+ {name: "Cloyster", sort: 50, categories: [], badges: 4, blocks: []},
+ {name: "Kingler", sort: 51, categories: [], badges: 4, blocks: []},
+ {name: "Seadra", sort: 52, categories: [], badges: 4, blocks: []},
+ {name: "Starmie", sort: 53, categories: [], badges: 4, blocks: []},
+ {name: "Exeggutor", sort: 54, categories: [], badges: 4, blocks: []},
+ {name: "Kangaskhan", sort: 55, categories: [], badges: 4, blocks: []},
+ {name: "Rhydon", sort: 56, categories: [], badges: 4, blocks: []},
+ {name: "Tauros", sort: 57, categories: [], badges: 4, blocks: []},
+ {name: "Tangela", sort: 58, categories: [], badges: 4, blocks: []},
+ {name: "Chansey", sort: 59, categories: [], badges: 4, blocks: []},
+ {name: "Dragonite", sort: 60, categories: [], badges: 4, blocks: []},
+ {name: "Golduck", sort: 61, categories: [], badges: 5, blocks: []},
+ {name: "Slowbro", sort: 62, categories: [], badges: 5, blocks: []},
+ {name: "Dewgong", sort: 63, categories: [], badges: 5, blocks: []},
+ {name: "Articuno", sort: 64, categories: ["Legendary"], badges: 5, blocks: []},
+ {name: "Electrode", sort: 65, categories: [], badges: 5, blocks: []},
+ {name: "Zapdos", sort: 66, categories: ["Legendary"], badges: 5, blocks: []},
+ {name: "Lapras", sort: 67, categories: [], badges: 5, blocks: []},
+ {name: "Omastar", sort: 68, categories: [], badges: 6, blocks: ["Kabutops"]},
+ {name: "Kabutops", sort: 69, categories: [], badges: 6, blocks: ["Omastar"]},
+ {name: "Aerodactyl", sort: 70, categories: [], badges: 6, blocks: []},
+ {name: "Muk", sort: 72, categories: [], badges: 6, blocks: []},
+ {name: "Arcanine", sort: 73, categories: [], badges: 6, blocks: []},
+ {name: "Ditto", sort: 73, categories: [], badges: 6, blocks: []},
+ {name: "Moltres", sort: 74, categories: ["Legendary"], badges: 8, blocks: []}
+],
+gold: [{name: "Meganium", sort: 1, categories: ["Starter"], badges: 0, blocks: ["Typhlosion", "Feraligatr"]},
+ {name: "Typhlosion", sort: 2, categories: ["Starter"], badges: 0, blocks: ["Meganium", "Feraligatr"]},
+ {name: "Feraligatr", sort: 3, categories: ["Starter"], badges: 0, blocks: ["Meganium", "Typhlosion"]},
+ {name: "Pidgeot", sort: 4, categories: [], badges: 0, blocks: []},
+ {name: "Furret", sort: 5, categories: [], badges: 0, blocks: []},
+ {name: "Raticate", sort: 6, categories: [], badges: 0, blocks: []},
+ {name: "Noctowl", sort: 7, categories: [], badges: 0, blocks: []},
+ {name: "Graveler", sort: 8, categories: ["Trade1"], badges: 0, blocks: []},
+ {name: "Golem", sort: 9, categories: ["Trade2"], badges: 0, blocks: []},
+ {name: "Fearow", sort: 10, categories: [], badges: 0, blocks: []},
+ {name: "Wigglytuff", sort: 11, categories: [], badges: 0, blocks: []},
+ {name: "Butterfree", sort: 12, categories: [], badges: 0, blocks: []},
+ {name: "Ariados", sort: 13, categories: [], badges: 0, blocks: []},
+ {name: "Victreebel", sort: 14, categories: [], badges: 0, blocks: ["Vileplume", "Exeggutor"]},
+ {name: "Crobat", sort: 15, categories: [], badges: 0, blocks: []},
+ {name: "Dunsparce", sort: 16, categories: [], badges: 0, blocks: []},
+ {name: "Onix", sort: 17, categories: ["Trade1"], badges: 0, blocks: []},
+ {name: "Steelix", sort: 18, categories: ["Trade2"], badges: 0, blocks: []},
+ {name: "Haunter", sort: 19, categories: ["Trade1"], badges: 0, blocks: []},
+ {name: "Gengar", sort: 20, categories: ["Trade2"], badges: 0, blocks: []},
+ {name: "Togetic", sort: 21, categories: [], badges: 1, blocks: []},
+ {name: "Ampharos", sort: 22, categories: [], badges: 1, blocks: []},
+ {name: "Jumpluff", sort: 23, categories: [], badges: 1, blocks: []},
+ {name: "Quagsire", sort: 24, categories: [], badges: 1, blocks: []},
+ {name: "Unown", sort: 25, categories: [], badges: 1, blocks: []},
+ {name: "Gyarados", sort: 26, categories: [], badges: 1, blocks: []},
+ {name: "Tentacruel", sort: 27, categories: [], badges: 1, blocks: []},
+ {name: "Poliwrath", sort: 28, categories: [], badges: 1, blocks: ["Cloyster", "Starmie", "Vaporeon"]},
+ {name: "Politoed", sort: 29, categories: ["Trade2"], badges: 1, blocks: []},
+ {name: "Seaking", sort: 30, categories: [], badges: 1, blocks: []},
+ {name: "Kingler", sort: 31, categories: [], badges: 1, blocks: []},
+ {name: "Qwilfish", sort: 32, categories: [], badges: 1, blocks: []},
+ {name: "Sandslash", sort: 33, categories: [], badges: 1, blocks: []},
+ {name: "Slowbro", sort: 34, categories: [], badges: 1, blocks: []},
+ {name: "Slowking", sort: 35, categories: ["Trade2"], badges: 1, blocks: []},
+ {name: "Parasect", sort: 36, categories: [], badges: 2, blocks: []},
+ {name: "Vileplume", sort: 37, categories: [], badges: 2, blocks: ["Victreebel", "Exeggutor"]},
+ {name: "Bellossom", sort: 38, categories: [], badges: 2, blocks: []},
+ {name: "Exeggutor", sort: 39, categories: [], badges: 2, blocks: ["Vileplume", "Victreebel"]},
+ {name: "Forretress", sort: 40, categories: [], badges: 2, blocks: []},
+ {name: "Heracross", sort: 41, categories: [], badges: 2, blocks: []},
+ {name: "Aipom", sort: 42, categories: [], badges: 2, blocks: []},
+ {name: "Hypno", sort: 43, categories: [], badges: 2, blocks: []},
+ {name: "Kadabra", sort: 44, categories: ["Trade1"], badges: 2, blocks: []},
+ {name: "Alakazam", sort: 45, categories: ["Trade2"], badges: 2, blocks: []},
+ {name: "Ditto", sort: 46, categories: [], badges: 2, blocks: []},
+ {name: "Vaporeon", sort: 47, categories: [], badges: 2, blocks: ["Poliwrath", "Cloyster", "Starmie"]},
+ {name: "Jolteon", sort: 48, categories: [], badges: 2, blocks: ["Raichu"]},
+ {name: "Flareon", sort: 49, categories: [], badges: 2, blocks: ["Arcanine"]},
+ {name: "Espeon", sort: 50, categories: [], badges: 2, blocks: []},
+ {name: "Umbreon", sort: 51, categories: [], badges: 2, blocks: []},
+ {name: "Machoke", sort: 52, categories: ["Trade1"], badges: 2, blocks: []},
+ {name: "Machamp", sort: 53, categories: ["Trade2"], badges: 2, blocks: []},
+ {name: "Arbok", sort: 54, categories: [], badges: 2, blocks: []},
+ {name: "Dragonite", sort: 55, categories: [], badges: 2, blocks: []},
+ {name: "Nidoqueen", sort: 56, categories: [], badges: 3, blocks: []},
+ {name: "Nidoking", sort: 57, categories: [], badges: 3, blocks: []},
+ {name: "Yanma", sort: 58, categories: [], badges: 3, blocks: []},
+ {name: "Sunflora", sort: 59, categories: [], badges: 3, blocks: []},
+ {name: "Beedrill", sort: 60, categories: [], badges: 3, blocks: []},
+ {name: "Venomoth", sort: 61, categories: [], badges: 3, blocks: []},
+ {name: "Scyther", sort: 62, categories: ["Trade1"], badges: 3, blocks: []},
+ {name: "Scizor", sort: 63, categories: ["Trade2"], badges: 3, blocks: []},
+ {name: "Pinsir", sort: 64, categories: [], badges: 3, blocks: []},
+ {name: "Arcanine", sort: 65, categories: [], badges: 3, blocks: ["Flareon"]},
+ {name: "Stantler", sort: 66, categories: [], badges: 3, blocks: []},
+ {name: "Sudowoodo", sort: 67, categories: [], badges: 3, blocks: []},
+ {name: "Shuckle", sort: 68, categories: [], badges: 3, blocks: []},
+ {name: "Wobbuffet", sort: 69, categories: [], badges: 3, blocks: []},
+ {name: "Weezing", sort: 70, categories: [], badges: 3, blocks: []},
+ {name: "Magmar", sort: 71, categories: [], badges: 3, blocks: []},
+ {name: "Raikou", sort: 72, categories: ["Legendary"], badges: 3, blocks: []},
+ {name: "Entei", sort: 73, categories: ["Legendary"], badges: 3, blocks: []},
+ {name: "Suicune", sort: 74, categories: ["Legendary"], badges: 3, blocks: []},
+ {name: "Golduck", sort: 75, categories: [], badges: 4, blocks: []},
+ {name: "Lapras", sort: 76, categories: [], badges: 4, blocks: []},
+ {name: "Xatu", sort: 77, categories: [], badges: 4, blocks: []},
+ {name: "Smeargle", sort: 78, categories: [], badges: 4, blocks: []},
+ {name: "Magneton", sort: 79, categories: [], badges: 4, blocks: []},
+ {name: "Miltank", sort: 80, categories: [], badges: 4, blocks: []},
+ {name: "Tauros", sort: 81, categories: [], badges: 4, blocks: []},
+ {name: "Granbull", sort: 82, categories: [], badges: 4, blocks: []},
+ {name: "Farfetch'd", sort: 83, categories: [], badges: 4, blocks: []},
+ {name: "Corsola", sort: 84, categories: [], badges: 4, blocks: []},
+ {name: "Starmie", sort: 85, categories: [], badges: 4, blocks: ["Poliwrath", "Cloyster", "Vaporeon"]},
+ {name: "Lanturn", sort: 86, categories: [], badges: 4, blocks: []},
+ {name: "Cloyster", sort: 87, categories: [], badges: 4, blocks: ["Poliwrath", "Starmie", "Vaporeon"]},
+ {name: "Electrode", sort: 88, categories: [], badges: 4, blocks: []},
+ {name: "Mantine", sort: 89, categories: [], badges: 4, blocks: []},
+ {name: "Primeape", sort: 90, categories: [], badges: 6, blocks: []},
+ {name: "Azumarill", sort: 91, categories: [], badges: 6, blocks: []},
+ {name: "Girafarig", sort: 92, categories: [], badges: 6, blocks: []},
+ {name: "Dewgong", sort: 93, categories: [], badges: 7, blocks: []},
+ {name: "Seadra", sort: 94, categories: ["Trade1"], badges: 7, blocks: []},
+ {name: "Kingdra", sort: 95, categories: ["Trade2"], badges: 7, blocks: []},
+ {name: "Ho-Oh", sort: 96, categories: ["Legendary"], badges: 7, blocks: []},
+ {name: "Tangela", sort: 97, categories: [], badges: 7, blocks: []},
+ {name: "Lickitung", sort: 98, categories: [], badges: 7, blocks: []},
+ {name: "Octillery", sort: 99, categories: [], badges: 7, blocks: []},
+ {name: "Piloswine", sort: 100, categories: [], badges: 7, blocks: []},
+ {name: "Jynx", sort: 101, categories: [], badges: 7, blocks: []},
+ {name: "Rhydon", sort: 102, categories: [], badges: 7, blocks: []},
+ {name: "Hitmonlee", sort: 103, categories: [], badges: 8, blocks: []},
+ {name: "Hitmonchan", sort: 104, categories: [], badges: 8, blocks: []},
+ {name: "Hitmontop", sort: 105, categories: [], badges: 8, blocks: []},
+ {name: "Gligar", sort: 106, categories: [], badges: 8, blocks: []},
+ {name: "Ursaring", sort: 107, categories: [], badges: 8, blocks: []},
+ {name: "Dodrio", sort: 108, categories: [], badges: 8, blocks: []},
+ {name: "Rapidash", sort: 109, categories: [], badges: 8, blocks: []},
+ {name: "Electabuzz", sort: 110, categories: [], badges: 9, blocks: []},
+ {name: "Marowak", sort: 111, categories: [], badges: 10, blocks: []},
+ {name: "Kangaskhan", sort: 112, categories: [], badges: 10, blocks: []},
+ {name: "Murkrow", sort: 113, categories: [], badges: 11, blocks: []},
+ {name: "Houndoom", sort: 114, categories: [], badges: 11, blocks: []},
+ {name: "Muk", sort: 115, categories: [], badges: 11, blocks: []},
+ {name: "Mr. Mime", sort: 116, categories: [], badges: 11, blocks: []},
+ {name: "Porygon", sort: 117, categories: ["Trade1"], badges: 11, blocks: []},
+ {name: "Porygon2", sort: 118, categories: ["Trade2"], badges: 11, blocks: []},
+ {name: "Magcargo", sort: 119, categories: [], badges: 12, blocks: []},
+ {name: "Blissey", sort: 120, categories: [], badges: 13, blocks: []},
+ {name: "Aerodactyl", sort: 121, categories: [], badges: 13, blocks: []},
+ {name: "Snorlax", sort: 122, categories: [], badges: 13, blocks: []},
+ {name: "Dugtrio", sort: 123, categories: [], badges: 13, blocks: []},
+ {name: "Raichu", sort: 124, categories: [], badges: 13, blocks: ["Jolteon"]},
+ {name: "Lugia", sort: 125, categories: ["Legendary"], badges: 14, blocks: []},
+ {name: "Clefable", sort: 126, categories: [], badges: 14, blocks: []},
+ {name: "Sneasel", sort: 127, categories: [], badges: 16, blocks: []},
+ {name: "Tyranitar", sort: 128, categories: [], badges: 16, blocks: []},
+ {name: "Misdreavus", sort: 129, categories: [], badges: 16, blocks: []}
+],
+silver: [{name: "Meganium", sort: 1, categories: ["Starter"], badges: 0, blocks: ["Typhlosion", "Feraligatr"]},
+ {name: "Typhlosion", sort: 2, categories: ["Starter"], badges: 0, blocks: ["Meganium", "Feraligatr"]},
+ {name: "Feraligatr", sort: 3, categories: ["Starter"], badges: 0, blocks: ["Meganium", "Typhlosion"]},
+ {name: "Pidgeot", sort: 4, categories: [], badges: 0, blocks: []},
+ {name: "Furret", sort: 5, categories: [], badges: 0, blocks: []},
+ {name: "Raticate", sort: 6, categories: [], badges: 0, blocks: []},
+ {name: "Noctowl", sort: 7, categories: [], badges: 0, blocks: []},
+ {name: "Graveler", sort: 8, categories: ["Trade1"], badges: 0, blocks: []},
+ {name: "Golem", sort: 9, categories: ["Trade2"], badges: 0, blocks: []},
+ {name: "Fearow", sort: 10, categories: [], badges: 0, blocks: []},
+ {name: "Wigglytuff", sort: 11, categories: [], badges: 0, blocks: []},
+ {name: "Beedrill", sort: 12, categories: [], badges: 0, blocks: []},
+ {name: "Ledian", sort: 13, categories: [], badges: 0, blocks: []},
+ {name: "Victreebel", sort: 14, categories: [], badges: 0, blocks: ["Vileplume", "Exeggutor"]},
+ {name: "Crobat", sort: 15, categories: [], badges: 0, blocks: []},
+ {name: "Dunsparce", sort: 16, categories: [], badges: 0, blocks: []},
+ {name: "Onix", sort: 17, categories: ["Trade1"], badges: 0, blocks: []},
+ {name: "Steelix", sort: 18, categories: ["Trade2"], badges: 0, blocks: []},
+ {name: "Haunter", sort: 19, categories: ["Trade1"], badges: 0, blocks: []},
+ {name: "Gengar", sort: 20, categories: ["Trade2"], badges: 0, blocks: []},
+ {name: "Togetic", sort: 21, categories: [], badges: 1, blocks: []},
+ {name: "Arbok", sort: 22, categories: [], badges: 1, blocks: []},
+ {name: "Ampharos", sort: 23, categories: [], badges: 1, blocks: []},
+ {name: "Jumpluff", sort: 24, categories: [], badges: 1, blocks: []},
+ {name: "Quagsire", sort: 25, categories: [], badges: 1, blocks: []},
+ {name: "Unown", sort: 26, categories: [], badges: 1, blocks: []},
+ {name: "Gyarados", sort: 27, categories: [], badges: 1, blocks: []},
+ {name: "Tentacruel", sort: 28, categories: [], badges: 1, blocks: []},
+ {name: "Poliwrath", sort: 29, categories: [], badges: 1, blocks: ["Cloyster", "Starmie", "Vaporeon"]},
+ {name: "Politoed", sort: 30, categories: ["Trade2"], badges: 1, blocks: []},
+ {name: "Seaking", sort: 31, categories: [], badges: 1, blocks: []},
+ {name: "Kingler", sort: 32, categories: [], badges: 1, blocks: []},
+ {name: "Qwilfish", sort: 33, categories: [], badges: 1, blocks: []},
+ {name: "Slowbro", sort: 34, categories: [], badges: 1, blocks: []},
+ {name: "Slowking", sort: 35, categories: ["Trade2"], badges: 1, blocks: []},
+ {name: "Parasect", sort: 36, categories: [], badges: 2, blocks: []},
+ {name: "Vileplume", sort: 37, categories: [], badges: 2, blocks: ["Victreebel", "Exeggutor"]},
+ {name: "Bellossom", sort: 38, categories: [], badges: 2, blocks: []},
+ {name: "Exeggutor", sort: 39, categories: [], badges: 2, blocks: ["Vileplume", "Victreebel"]},
+ {name: "Forretress", sort: 40, categories: [], badges: 2, blocks: []},
+ {name: "Heracross", sort: 41, categories: [], badges: 2, blocks: []},
+ {name: "Aipom", sort: 42, categories: [], badges: 2, blocks: []},
+ {name: "Hypno", sort: 43, categories: [], badges: 2, blocks: []},
+ {name: "Kadabra", sort: 44, categories: ["Trade1"], badges: 2, blocks: []},
+ {name: "Alakazam", sort: 45, categories: ["Trade2"], badges: 2, blocks: []},
+ {name: "Ditto", sort: 46, categories: [], badges: 2, blocks: []},
+ {name: "Vaporeon", sort: 47, categories: [], badges: 2, blocks: ["Poliwrath", "Cloyster", "Starmie"]},
+ {name: "Jolteon", sort: 48, categories: [], badges: 2, blocks: ["Raichu"]},
+ {name: "Flareon", sort: 49, categories: [], badges: 2, blocks: ["Ninetales"]},
+ {name: "Espeon", sort: 50, categories: [], badges: 2, blocks: []},
+ {name: "Umbreon", sort: 51, categories: [], badges: 2, blocks: []},
+ {name: "Machoke", sort: 52, categories: ["Trade1"], badges: 2, blocks: []},
+ {name: "Machamp", sort: 53, categories: ["Trade2"], badges: 2, blocks: []},
+ {name: "Sandslash", sort: 54, categories: [], badges: 2, blocks: []},
+ {name: "Dragonite", sort: 55, categories: [], badges: 2, blocks: []},
+ {name: "Nidoqueen", sort: 56, categories: [], badges: 3, blocks: []},
+ {name: "Nidoking", sort: 57, categories: [], badges: 3, blocks: []},
+ {name: "Yanma", sort: 58, categories: [], badges: 3, blocks: []},
+ {name: "Sunflora", sort: 59, categories: [], badges: 3, blocks: []},
+ {name: "Butterfree", sort: 60, categories: [], badges: 3, blocks: []},
+ {name: "Venomoth", sort: 61, categories: [], badges: 3, blocks: []},
+ {name: "Scyther", sort: 62, categories: ["Trade1"], badges: 3, blocks: []},
+ {name: "Scizor", sort: 63, categories: ["Trade2"], badges: 3, blocks: []},
+ {name: "Pinsir", sort: 64, categories: [], badges: 3, blocks: []},
+ {name: "Ninetales", sort: 65, categories: [], badges: 3, blocks: ["Flareon"]},
+ {name: "Stantler", sort: 66, categories: [], badges: 3, blocks: []},
+ {name: "Sudowoodo", sort: 67, categories: [], badges: 3, blocks: []},
+ {name: "Shuckle", sort: 68, categories: [], badges: 3, blocks: []},
+ {name: "Wobbuffet", sort: 69, categories: [], badges: 3, blocks: []},
+ {name: "Weezing", sort: 70, categories: [], badges: 3, blocks: []},
+ {name: "Magmar", sort: 71, categories: [], badges: 3, blocks: []},
+ {name: "Raikou", sort: 72, categories: ["Legendary"], badges: 3, blocks: []},
+ {name: "Entei", sort: 73, categories: ["Legendary"], badges: 3, blocks: []},
+ {name: "Suicune", sort: 74, categories: ["Legendary"], badges: 3, blocks: []},
+ {name: "Golduck", sort: 75, categories: [], badges: 4, blocks: []},
+ {name: "Lapras", sort: 76, categories: [], badges: 4, blocks: []},
+ {name: "Xatu", sort: 77, categories: [], badges: 4, blocks: []},
+ {name: "Smeargle", sort: 78, categories: [], badges: 4, blocks: []},
+ {name: "Persian", sort: 79, categories: [], badges: 4, blocks: []},
+ {name: "Magneton", sort: 80, categories: [], badges: 4, blocks: []},
+ {name: "Miltank", sort: 81, categories: [], badges: 4, blocks: []},
+ {name: "Tauros", sort: 82, categories: [], badges: 4, blocks: []},
+ {name: "Granbull", sort: 83, categories: [], badges: 4, blocks: []},
+ {name: "Farfetch'd", sort: 84, categories: [], badges: 4, blocks: []},
+ {name: "Corsola", sort: 85, categories: [], badges: 4, blocks: []},
+ {name: "Starmie", sort: 86, categories: [], badges: 4, blocks: ["Poliwrath", "Cloyster", "Vaporeon"]},
+ {name: "Lanturn", sort: 87, categories: [], badges: 4, blocks: []},
+ {name: "Cloyster", sort: 88, categories: [], badges: 4, blocks: ["Poliwrath", "Starmie", "Vaporeon"]},
+ {name: "Electrode", sort: 89, categories: [], badges: 4, blocks: []},
+ {name: "Azumarill", sort: 90, categories: [], badges: 6, blocks: []},
+ {name: "Girafarig", sort: 91, categories: [], badges: 6, blocks: []},
+ {name: "Dewgong", sort: 92, categories: [], badges: 7, blocks: []},
+ {name: "Seadra", sort: 93, categories: ["Trade1"], badges: 7, blocks: []},
+ {name: "Kingdra", sort: 94, categories: ["Trade2"], badges: 7, blocks: []},
+ {name: "Lugia", sort: 95, categories: ["Legendary"], badges: 7, blocks: []},
+ {name: "Tangela", sort: 96, categories: [], badges: 7, blocks: []},
+ {name: "Lickitung", sort: 97, categories: [], badges: 7, blocks: []},
+ {name: "Octillery", sort: 98, categories: [], badges: 7, blocks: []},
+ {name: "Piloswine", sort: 99, categories: [], badges: 7, blocks: []},
+ {name: "Delibird", sort: 100, categories: [], badges: 7, blocks: []},
+ {name: "Jynx", sort: 101, categories: [], badges: 7, blocks: []},
+ {name: "Rhydon", sort: 102, categories: [], badges: 7, blocks: []},
+ {name: "Hitmonlee", sort: 103, categories: [], badges: 8, blocks: []},
+ {name: "Hitmonchan", sort: 104, categories: [], badges: 8, blocks: []},
+ {name: "Hitmontop", sort: 105, categories: [], badges: 8, blocks: []},
+ {name: "Donphan", sort: 106, categories: [], badges: 8, blocks: []},
+ {name: "Skarmory", sort: 107, categories: [], badges: 8, blocks: []},
+ {name: "Dodrio", sort: 108, categories: [], badges: 8, blocks: []},
+ {name: "Rapidash", sort: 109, categories: [], badges: 8, blocks: []},
+ {name: "Electabuzz", sort: 110, categories: [], badges: 9, blocks: []},
+ {name: "Marowak", sort: 111, categories: [], badges: 10, blocks: []},
+ {name: "Kangaskhan", sort: 112, categories: [], badges: 10, blocks: []},
+ {name: "Murkrow", sort: 113, categories: [], badges: 11, blocks: []},
+ {name: "Houndoom", sort: 114, categories: [], badges: 11, blocks: []},
+ {name: "Muk", sort: 115, categories: [], badges: 11, blocks: []},
+ {name: "Mr. Mime", sort: 116, categories: [], badges: 11, blocks: []},
+ {name: "Porygon", sort: 117, categories: ["Trade1"], badges: 11, blocks: []},
+ {name: "Porygon2", sort: 118, categories: ["Trade2"], badges: 11, blocks: []},
+ {name: "Magcargo", sort: 119, categories: [], badges: 12, blocks: []},
+ {name: "Blissey", sort: 120, categories: [], badges: 13, blocks: []},
+ {name: "Aerodactyl", sort: 121, categories: [], badges: 13, blocks: []},
+ {name: "Snorlax", sort: 122, categories: [], badges: 13, blocks: []},
+ {name: "Dugtrio", sort: 123, categories: [], badges: 13, blocks: []},
+ {name: "Raichu", sort: 124, categories: [], badges: 13, blocks: ["Jolteon"]},
+ {name: "Ho-Oh", sort: 125, categories: ["Legendary"], badges: 14, blocks: []},
+ {name: "Clefable", sort: 126, categories: [], badges: 14, blocks: []},
+ {name: "Sneasel", sort: 127, categories: [], badges: 16, blocks: []},
+ {name: "Tyranitar", sort: 128, categories: [], badges: 16, blocks: []},
+ {name: "Misdreavus", sort: 129, categories: [], badges: 16, blocks: []}
+],
+crystal: [{name: "Meganium", sort: 1, categories: ["Starter"], badges: 0, blocks: ["Typhlosion", "Feraligatr"]},
+ {name: "Typhlosion", sort: 2, categories: ["Starter"], badges: 0, blocks: ["Meganium", "Feraligatr"]},
+ {name: "Feraligatr", sort: 3, categories: ["Starter"], badges: 0, blocks: ["Meganium", "Typhlosion"]},
+ {name: "Pidgeot", sort: 4, categories: [], badges: 0, blocks: []},
+ {name: "Furret", sort: 5, categories: [], badges: 0, blocks: []},
+ {name: "Raticate", sort: 6, categories: [], badges: 0, blocks: []},
+ {name: "Jumpluff", sort: 7, categories: [], badges: 0, blocks: []},
+ {name: "Noctowl", sort: 8, categories: [], badges: 0, blocks: []},
+ {name: "Graveler", sort: 9, categories: ["Trade1"], badges: 0, blocks: []},
+ {name: "Golem", sort: 10, categories: ["Trade2"], badges: 0, blocks: []},
+ {name: "Fearow", sort: 11, categories: [], badges: 0, blocks: []},
+ {name: "Donphan", sort: 12, categories: [], badges: 0, blocks: []},
+ {name: "Butterfree", sort: 13, categories: [], badges: 0, blocks: []},
+ {name: "Beedrill", sort: 14, categories: [], badges: 0, blocks: []},
+ {name: "Ledian", sort: 15, categories: [], badges: 0, blocks: []},
+ {name: "Ariados", sort: 16, categories: [], badges: 0, blocks: []},
+ {name: "Poliwrath", sort: 17, categories: [], badges: 0, blocks: []},
+ {name: "Politoed", sort: 18, categories: ["Trade2"], badges: 0, blocks: []},
+ {name: "Crobat", sort: 19, categories: [], badges: 0, blocks: []},
+ {name: "Victreebel", sort: 20, categories: [], badges: 0, blocks: []},
+ {name: "Haunter", sort: 21, categories: ["Trade1"], badges: 0, blocks: []},
+ {name: "Gengar", sort: 22, categories: ["Trade2"], badges: 0, blocks: []},
+ {name: "Dunsparce", sort: 23, categories: [], badges: 0, blocks: []},
+ {name: "Ursaring", sort: 24, categories: [], badges: 0, blocks: []},
+ {name: "Onix", sort: 25, categories: ["Trade1"], badges: 0, blocks: []},
+ {name: "Steelix", sort: 26, categories: ["Trade2"], badges: 0, blocks: []},
+ {name: "Togetic", sort: 27, categories: [], badges: 1, blocks: []},
+ {name: "Arbok", sort: 28, categories: [], badges: 1, blocks: []},
+ {name: "Quagsire", sort: 29, categories: [], badges: 1, blocks: []},
+ {name: "Unown", sort: 30, categories: [], badges: 1, blocks: []},
+ {name: "Gyarados", sort: 31, categories: [], badges: 1, blocks: []},
+ {name: "Tentacruel", sort: 32, categories: [], badges: 1, blocks: []},
+ {name: "Seaking", sort: 33, categories: [], badges: 1, blocks: []},
+ {name: "Kingler", sort: 34, categories: [], badges: 1, blocks: []},
+ {name: "Qwilfish", sort: 35, categories: [], badges: 1, blocks: []},
+ {name: "Sandslash", sort: 36, categories: [], badges: 1, blocks: []},
+ {name: "Slowbro", sort: 37, categories: [], badges: 1, blocks: []},
+ {name: "Slowking", sort: 38, categories: ["Trade2"], badges: 1, blocks: []},
+ {name: "Parasect", sort: 39, categories: [], badges: 2, blocks: []},
+ {name: "Bellossom", sort: 40, categories: [], badges: 2, blocks: []},
+ {name: "Vileplume", sort: 41, categories: [], badges: 2, blocks: []},
+ {name: "Venomoth", sort: 42, categories: [], badges: 2, blocks: []},
+ {name: "Golduck", sort: 43, categories: [], badges: 2, blocks: []},
+ {name: "Forretress", sort: 44, categories: [], badges: 2, blocks: []},
+ {name: "Aipom", sort: 45, categories: [], badges: 2, blocks: []},
+ {name: "Heracross", sort: 46, categories: [], badges: 2, blocks: []},
+ {name: "Exeggutor", sort: 47, categories: [], badges: 2, blocks: []},
+ {name: "Granbull", sort: 48, categories: [], badges: 2, blocks: []},
+ {name: "Kadabra", sort: 49, categories: ["Trade1"], badges: 2, blocks: []},
+ {name: "Alakazam", sort: 50, categories: ["Trade2"], badges: 2, blocks: []},
+ {name: "Wigglytuff", sort: 51, categories: [], badges: 2, blocks: []},
+ {name: "Ditto", sort: 52, categories: [], badges: 2, blocks: []},
+ {name: "Hypno", sort: 53, categories: [], badges: 2, blocks: []},
+ {name: "Raichu", sort: 54, categories: [], badges: 2, blocks: []},
+ {name: "Clefable", sort: 55, categories: [], badges: 2, blocks: []},
+ {name: "Hitmonlee", sort: 56, categories: [], badges: 2, blocks: []},
+ {name: "Hitmonchan", sort: 57, categories: [], badges: 2, blocks: []},
+ {name: "Hitmontop", sort: 58, categories: [], badges: 2, blocks: []},
+ {name: "Jynx", sort: 59, categories: [], badges: 2, blocks: []},
+ {name: "Electabuzz", sort: 60, categories: [], badges: 2, blocks: []},
+ {name: "Magmar", sort: 61, categories: [], badges: 2, blocks: []},
+ {name: "Vaporeon", sort: 62, categories: [], badges: 2, blocks: []},
+ {name: "Jolteon", sort: 63, categories: [], badges: 2, blocks: []},
+ {name: "Flareon", sort: 64, categories: [], badges: 2, blocks: []},
+ {name: "Espeon", sort: 65, categories: [], badges: 2, blocks: []},
+ {name: "Umbreon", sort: 66, categories: [], badges: 2, blocks: []},
+ {name: "Machoke", sort: 67, categories: ["Trade1"], badges: 2, blocks: []},
+ {name: "Machamp", sort: 68, categories: ["Trade2"], badges: 2, blocks: []},
+ {name: "Marowak", sort: 69, categories: [], badges: 2, blocks: []},
+ {name: "Wobbuffet", sort: 70, categories: [], badges: 2, blocks: []},
+ {name: "Arcanine", sort: 71, categories: [], badges: 3, blocks: []},
+ {name: "Yanma", sort: 72, categories: [], badges: 3, blocks: []},
+ {name: "Nidoqueen", sort: 73, categories: [], badges: 3, blocks: []},
+ {name: "Nidoking", sort: 74, categories: [], badges: 3, blocks: []},
+ {name: "Sunflora", sort: 75, categories: [], badges: 3, blocks: []},
+ {name: "Scyther", sort: 76, categories: ["Trade1"], badges: 3, blocks: []},
+ {name: "Scizor", sort: 77, categories: ["Trade2"], badges: 3, blocks: []},
+ {name: "Pinsir", sort: 78, categories: [], badges: 3, blocks: []},
+ {name: "Sudowoodo", sort: 79, categories: [], badges: 3, blocks: []},
+ {name: "Stantler", sort: 80, categories: [], badges: 3, blocks: []},
+ {name: "Shuckle", sort: 81, categories: [], badges: 3, blocks: []},
+ {name: "Weezing", sort: 82, categories: [], badges: 3, blocks: []},
+ {name: "Raikou", sort: 83, categories: ["Legendary"], badges: 3, blocks: []},
+ {name: "Entei", sort: 84, categories: ["Legendary"], badges: 3, blocks: []},
+ {name: "Lapras", sort: 85, categories: [], badges: 4, blocks: []},
+ {name: "Xatu", sort: 86, categories: [], badges: 4, blocks: []},
+ {name: "Smeargle", sort: 87, categories: [], badges: 4, blocks: []},
+ {name: "Magneton", sort: 88, categories: [], badges: 4, blocks: []},
+ {name: "Miltank", sort: 89, categories: [], badges: 4, blocks: []},
+ {name: "Tauros", sort: 90, categories: [], badges: 4, blocks: []},
+ {name: "Persian", sort: 91, categories: [], badges: 4, blocks: []},
+ {name: "Corsola", sort: 92, categories: [], badges: 4, blocks: []},
+ {name: "Starmie", sort: 93, categories: [], badges: 4, blocks: []},
+ {name: "Lanturn", sort: 94, categories: [], badges: 4, blocks: []},
+ {name: "Cloyster", sort: 95, categories: [], badges: 4, blocks: []},
+ {name: "Electrode", sort: 96, categories: [], badges: 4, blocks: []},
+ {name: "Mantine", sort: 97, categories: [], badges: 4, blocks: []},
+ {name: "Azumarill", sort: 98, categories: [], badges: 6, blocks: []},
+ {name: "Farfetch'd", sort: 99, categories: [], badges: 6, blocks: []},
+ {name: "Dewgong", sort: 100, categories: [], badges: 7, blocks: []},
+ {name: "Seadra", sort: 101, categories: ["Trade1"], badges: 7, blocks: []},
+ {name: "Kingdra", sort: 102, categories: ["Trade2"], badges: 7, blocks: []},
+ {name: "Suicune", sort: 103, categories: ["Legendary"], badges: 7, blocks: []},
+ {name: "Lickitung", sort: 104, categories: [], badges: 7, blocks: []},
+ {name: "Tangela", sort: 105, categories: [], badges: 7, blocks: []},
+ {name: "Piloswine", sort: 106, categories: [], badges: 7, blocks: []},
+ {name: "Delibird", sort: 107, categories: [], badges: 7, blocks: []},
+ {name: "Sneasel", sort: 108, categories: [], badges: 7, blocks: []},
+ {name: "Dragonite", sort: 109, categories: [], badges: 8, blocks: []},
+ {name: "Dodrio", sort: 110, categories: [], badges: 8, blocks: []},
+ {name: "Gligar", sort: 111, categories: [], badges: 8, blocks: []},
+ {name: "Skarmory", sort: 112, categories: [], badges: 8, blocks: []},
+ {name: "Rapidash", sort: 113, categories: [], badges: 8, blocks: []},
+ {name: "Rhydon", sort: 114, categories: [], badges: 8, blocks: []},
+ {name: "Ho-Oh", sort: 115, categories: ["Legendary"], badges: 8, blocks: []},
+ {name: "Kangaskhan", sort: 116, categories: [], badges: 10, blocks: []},
+ {name: "Murkrow", sort: 117, categories: [], badges: 11, blocks: []},
+ {name: "Houndoom", sort: 118, categories: [], badges: 11, blocks: []},
+ {name: "Muk", sort: 119, categories: [], badges: 11, blocks: []},
+ {name: "Porygon", sort: 120, categories: ["Trade1"], badges: 11, blocks: []},
+ {name: "Porygon2", sort: 121, categories: ["Trade2"], badges: 11, blocks: []},
+ {name: "Tyranitar", sort: 122, categories: [], badges: 11, blocks: []},
+ {name: "Magcargo", sort: 123, categories: [], badges: 12, blocks: []},
+ {name: "Blissey", sort: 124, categories: [], badges: 13, blocks: []},
+ {name: "Aerodactyl", sort: 125, categories: [], badges: 13, blocks: []},
+ {name: "Snorlax", sort: 126, categories: [], badges: 13, blocks: []},
+ {name: "Dugtrio", sort: 127, categories: [], badges: 13, blocks: []},
+ {name: "Lugia", sort: 128, categories: ["Legendary"], badges: 14, blocks: []},
+ {name: "Mr. Mime", sort: 129, categories: [], badges: 14, blocks: []},
+ {name: "Misdreavus", sort: 130, categories: [], badges: 16, blocks: []}
+],
+ruby: [{name: "Sceptile", sort: 1, categories: ["Starter"], badges: 0, blocks: ["Blaziken", "Swampert"]},
+ {name: "Blaziken", sort: 2, categories: ["Starter"], badges: 0, blocks: ["Sceptile", "Swampert"]},
+ {name: "Swampert", sort: 3, categories: ["Starter"], badges: 0, blocks: ["Sceptile", "Blaziken"]},
+ {name: "Linoone", sort: 4, categories: [], badges: 0, blocks: []},
+ {name: "Beautifly", sort: 5, categories: [], badges: 0, blocks: []},
+ {name: "Dustox", sort: 6, categories: [], badges: 0, blocks: []},
+ {name: "Mightyena", sort: 7, categories: [], badges: 0, blocks: []},
+ {name: "Pelipper", sort: 8, categories: [], badges: 0, blocks: []},
+ {name: "Shiftry", sort: 9, categories: [], badges: 0, blocks: []},
+ {name: "Gardevoir", sort: 10, categories: [], badges: 0, blocks: []},
+ {name: "Masquerain", sort: 11, categories: [], badges: 0, blocks: []},
+ {name: "Swellow", sort: 12, categories: [], badges: 0, blocks: []},
+ {name: "Breloom", sort: 13, categories: [], badges: 0, blocks: []},
+ {name: "Slaking", sort: 14, categories: [], badges: 0, blocks: []},
+ {name: "Hariyama", sort: 15, categories: [], badges: 0, blocks: []},
+ {name: "Exploud", sort: 16, categories: [], badges: 0, blocks: []},
+ {name: "Ninjask", sort: 17, categories: [], badges: 0, blocks: []},
+ {name: "Shedinja", sort: 18, categories: [], badges: 0, blocks: []},
+ {name: "Delcatty", sort: 19, categories: [], badges: 0, blocks: ["Wigglytuff"]},
+ {name: "Gyarados", sort: 20, categories: [], badges: 1, blocks: []},
+ {name: "Tentacruel", sort: 21, categories: [], badges: 1, blocks: []},
+ {name: "Seaking", sort: 22, categories: [], badges: 1, blocks: []},
+ {name: "Crobat", sort: 23, categories: [], badges: 2, blocks: []},
+ {name: "Kadabra", sort: 24, categories: ["Trade1"], badges: 2, blocks: []},
+ {name: "Alakazam", sort: 25, categories: ["Trade2"], badges: 2, blocks: []},
+ {name: "Graveler", sort: 26, categories: ["Trade1"], badges: 2, blocks: []},
+ {name: "Golem", sort: 27, categories: ["Trade2"], badges: 2, blocks: []},
+ {name: "Aggron", sort: 28, categories: [], badges: 2, blocks: []},
+ {name: "Mawile", sort: 29, categories: [], badges: 2, blocks: []},
+ {name: "Manectric", sort: 30, categories: [], badges: 2, blocks: []},
+ {name: "Minun", sort: 31, categories: [], badges: 2, blocks: []},
+ {name: "Swalot", sort: 32, categories: [], badges: 2, blocks: []},
+ {name: "Vileplume", sort: 33, categories: [], badges: 2, blocks: []},
+ {name: "Bellossom", sort: 34, categories: [], badges: 2, blocks: []},
+ {name: "Plusle", sort: 34, categories: [], badges: 2, blocks: []},
+ {name: "Nosepass", sort: 36, categories: [], badges: 3, blocks: []},
+ {name: "Roselia", sort: 37, categories: [], badges: 3, blocks: []},
+ {name: "Illumise", sort: 38, categories: [], badges: 3, blocks: []},
+ {name: "Azumarill", sort: 39, categories: [], badges: 3, blocks: []},
+ {name: "Volbeat", sort: 40, categories: [], badges: 3, blocks: []},
+ {name: "Camerupt", sort: 41, categories: [], badges: 3, blocks: []},
+ {name: "Machoke", sort: 42, categories: ["Trade1"], badges: 3, blocks: []},
+ {name: "Machamp", sort: 43, categories: ["Trade2"], badges: 3, blocks: []},
+ {name: "Weezing", sort: 44, categories: [], badges: 3, blocks: []},
+ {name: "Torkoal", sort: 45, categories: [], badges: 3, blocks: []},
+ {name: "Magcargo", sort: 46, categories: [], badges: 3, blocks: []},
+ {name: "Muk", sort: 47, categories: [], badges: 3, blocks: []},
+ {name: "Spinda", sort: 48, categories: [], badges: 3, blocks: []},
+ {name: "Sandslash", sort: 49, categories: [], badges: 3, blocks: []},
+ {name: "Skarmory", sort: 50, categories: [], badges: 3, blocks: []},
+ {name: "Altaria", sort: 51, categories: [], badges: 3, blocks: []},
+ {name: "Zangoose", sort: 52, categories: [], badges: 3, blocks: []},
+ {name: "Solrock", sort: 53, categories: [], badges: 3, blocks: []},
+ {name: "Grumpig", sort: 54, categories: [], badges: 3, blocks: []},
+ {name: "Wobbuffet", sort: 55, categories: [], badges: 3, blocks: []},
+ {name: "Flygon", sort: 56, categories: [], badges: 4, blocks: []},
+ {name: "Cacturne", sort: 57, categories: [], badges: 4, blocks: []},
+ {name: "Claydol", sort: 58, categories: [], badges: 4, blocks: []},
+ {name: "Cradily", sort: 59, categories: [], badges: 4, blocks: ["Armaldo"]},
+ {name: "Armaldo", sort: 60, categories: [], badges: 4, blocks: ["Cradily"]},
+ {name: "Wigglytuff", sort: 61, categories: [], badges: 5, blocks: ["Delcatty"]}, 
+ {name: "Sharpedo", sort: 62, categories: [], badges: 5, blocks: []},
+ {name: "Wailord", sort: 63, categories: [], badges: 5, blocks: []},
+ {name: "Whiscash", sort: 64, categories: [], badges: 5, blocks: []},
+ {name: "Crawdaunt", sort: 65, categories: [], badges: 5, blocks: []},
+ {name: "Magneton", sort: 66, categories: [], badges: 5, blocks: []},
+ {name: "Electrode", sort: 67, categories: [], badges: 5, blocks: []},
+ {name: "Kecleon", sort: 68, categories: [], badges: 5, blocks: []},
+ {name: "Tropius", sort: 69, categories: [], badges: 5, blocks: []},
+ {name: "Milotic", sort: 70, categories: [], badges: 5, blocks: []},
+ {name: "Castform", sort: 71, categories: [], badges: 5, blocks: []},
+ {name: "Absol", sort: 72, categories: [], badges: 6, blocks: []},
+ {name: "Dusclops", sort: 73, categories: [], badges: 6, blocks: []},
+ {name: "Banette", sort: 74, categories: [], badges: 6, blocks: []},
+ {name: "Medicham", sort: 75, categories: [], badges: 6, blocks: []},
+ {name: "Ninetales", sort: 76, categories: [], badges: 6, blocks: []},
+ {name: "Chimecho", sort: 77, categories: [], badges: 6, blocks: []},
+ {name: "Girafarig", sort: 78, categories: [], badges: 6, blocks: []},
+ {name: "Dodrio", sort: 79, categories: [], badges: 6, blocks: []},
+ {name: "Xatu", sort: 80, categories: [], badges: 6, blocks: []},
+ {name: "Raichu", sort: 81, categories: [], badges: 6, blocks: []},
+ {name: "Golduck", sort: 82, categories: [], badges: 6, blocks: []},
+ {name: "Rhydon", sort: 83, categories: [], badges: 6, blocks: []},
+ {name: "Pinsir", sort: 84, categories: [], badges: 6, blocks: []},
+ {name: "Heracross", sort: 85, categories: [], badges: 6, blocks: []},
+ {name: "Donphan", sort: 86, categories: [], badges: 6, blocks: []},
+ {name: "Starmie", sort: 87, categories: [], badges: 7, blocks: []},
+ {name: "Seadra", sort: 88, categories: ["Trade1"], badges: 7, blocks: []},
+ {name: "Kingdra", sort: 89, categories: ["Trade2"], badges: 7, blocks: []},
+ {name: "Clamperl", sort: 90, categories: ["Trade1"], badges: 7, blocks: []},
+ {name: "Huntail", sort: 91, categories: ["Trade2"], badges: 7, blocks: ["Gorebyss"]},
+ {name: "Gorebyss", sort: 92, categories: ["Trade2"], badges: 7, blocks: ["Huntail"]},
+ {name: "Lanturn", sort: 93, categories: [], badges: 7, blocks: []},
+ {name: "Relicanth", sort: 94, categories: [], badges: 7, blocks: []},
+ {name: "Walrein", sort: 95, categories: [], badges: 7, blocks: []},
+ {name: "Glalie", sort: 96, categories: [], badges: 7, blocks: []},
+ {name: "Luvdisc", sort: 97, categories: [], badges: 7, blocks: []},
+ {name: "Corsola", sort: 98, categories: [], badges: 7, blocks: []},
+ {name: "Groudon", sort: 99, categories: [], badges: 7, blocks: []},
+ {name: "Salamence", sort: 100, categories: [], badges: 8, blocks: []},
+ {name: "Regirock", sort: 101, categories: [], badges: 8, blocks: []},
+ {name: "Regice", sort: 102, categories: [], badges: 8, blocks: []},
+ {name: "Registeel", sort: 103, categories: [], badges: 8, blocks: []},
+],
+sapphire: [{name: "Sceptile", sort: 1, categories: ["Starter"], badges: 0, blocks: ["Blaziken", "Swampert"]},
+ {name: "Blaziken", sort: 2, categories: ["Starter"], badges: 0, blocks: ["Sceptile", "Swampert"]},
+ {name: "Swampert", sort: 3, categories: ["Starter"], badges: 0, blocks: ["Sceptile", "Blaziken"]},
+ {name: "Linoone", sort: 4, categories: [], badges: 0, blocks: []},
+ {name: "Beautifly", sort: 5, categories: [], badges: 0, blocks: []},
+ {name: "Dustox", sort: 6, categories: [], badges: 0, blocks: []},
+ {name: "Mightyena", sort: 7, categories: [], badges: 0, blocks: []},
+ {name: "Pelipper", sort: 8, categories: [], badges: 0, blocks: []},
+ {name: "Ludicolo", sort: 9, categories: [], badges: 0, blocks: []},
+ {name: "Gardevoir", sort: 10, categories: [], badges: 0, blocks: []},
+ {name: "Masquerain", sort: 11, categories: [], badges: 0, blocks: []},
+ {name: "Swellow", sort: 12, categories: [], badges: 0, blocks: []},
+ {name: "Breloom", sort: 13, categories: [], badges: 0, blocks: []},
+ {name: "Slaking", sort: 14, categories: [], badges: 0, blocks: []},
+ {name: "Hariyama", sort: 15, categories: [], badges: 0, blocks: []},
+ {name: "Exploud", sort: 16, categories: [], badges: 0, blocks: []},
+ {name: "Ninjask", sort: 17, categories: [], badges: 0, blocks: []},
+ {name: "Shedinja", sort: 18, categories: [], badges: 0, blocks: []},
+ {name: "Delcatty", sort: 19, categories: [], badges: 0, blocks: []},
+ {name: "Gyarados", sort: 20, categories: [], badges: 1, blocks: []},
+ {name: "Tentacruel", sort: 21, categories: [], badges: 1, blocks: []},
+ {name: "Seaking", sort: 22, categories: [], badges: 1, blocks: []},
+ {name: "Crobat", sort: 23, categories: [], badges: 2, blocks: []},
+ {name: "Kadabra", sort: 24, categories: ["Trade1"], badges: 2, blocks: []},
+ {name: "Alakazam", sort: 25, categories: ["Trade2"], badges: 2, blocks: []},
+ {name: "Graveler", sort: 26, categories: ["Trade1"], badges: 2, blocks: []},
+ {name: "Golem", sort: 27, categories: ["Trade2"], badges: 2, blocks: []},
+ {name: "Aggron", sort: 28, categories: [], badges: 2, blocks: []},
+ {name: "Sableye", sort: 29, categories: [], badges: 2, blocks: []},
+ {name: "Manectric", sort: 30, categories: [], badges: 2, blocks: []},
+ {name: "Plusle", sort: 31, categories: [], badges: 2, blocks: []},
+ {name: "Swalot", sort: 32, categories: [], badges: 2, blocks: []},
+ {name: "Vileplume", sort: 33, categories: [], badges: 2, blocks: []},
+ {name: "Bellossom", sort: 34, categories: [], badges: 2, blocks: []},
+ {name: "Minun", sort: 34, categories: [], badges: 2, blocks: []},
+ {name: "Nosepass", sort: 36, categories: [], badges: 3, blocks: []},
+ {name: "Roselia", sort: 37, categories: [], badges: 3, blocks: []},
+ {name: "Volbeat", sort: 38, categories: [], badges: 3, blocks: []},
+ {name: "Azumarill", sort: 39, categories: [], badges: 3, blocks: []},
+ {name: "Illumise", sort: 40, categories: [], badges: 3, blocks: []},
+ {name: "Camerupt", sort: 41, categories: [], badges: 3, blocks: []},
+ {name: "Machoke", sort: 42, categories: ["Trade1"], badges: 3, blocks: []},
+ {name: "Machamp", sort: 43, categories: ["Trade2"], badges: 3, blocks: []},
+ {name: "Muk", sort: 44, categories: [], badges: 3, blocks: []},
+ {name: "Torkoal", sort: 45, categories: [], badges: 3, blocks: []},
+ {name: "Magcargo", sort: 46, categories: [], badges: 3, blocks: []},
+ {name: "Weezing", sort: 47, categories: [], badges: 3, blocks: []},
+ {name: "Spinda", sort: 48, categories: [], badges: 3, blocks: []},
+ {name: "Sandslash", sort: 49, categories: [], badges: 3, blocks: []},
+ {name: "Skarmory", sort: 50, categories: [], badges: 3, blocks: []},
+ {name: "Altaria", sort: 51, categories: [], badges: 3, blocks: []},
+ {name: "Seviper", sort: 52, categories: [], badges: 3, blocks: []},
+ {name: "Lunatone", sort: 53, categories: [], badges: 3, blocks: []},
+ {name: "Grumpig", sort: 54, categories: [], badges: 3, blocks: []},
+ {name: "Wobbuffet", sort: 55, categories: [], badges: 3, blocks: []},
+ {name: "Flygon", sort: 56, categories: [], badges: 4, blocks: []},
+ {name: "Cacturne", sort: 57, categories: [], badges: 4, blocks: []},
+ {name: "Claydol", sort: 58, categories: [], badges: 4, blocks: []},
+ {name: "Cradily", sort: 59, categories: [], badges: 4, blocks: ["Armaldo"]},
+ {name: "Armaldo", sort: 60, categories: [], badges: 4, blocks: ["Cradily"]},
+ {name: "Wigglytuff", sort: 61, categories: [], badges: 5, blocks: []}, 
+ {name: "Sharpedo", sort: 62, categories: [], badges: 5, blocks: []},
+ {name: "Wailord", sort: 63, categories: [], badges: 5, blocks: []},
+ {name: "Whiscash", sort: 64, categories: [], badges: 5, blocks: []},
+ {name: "Crawdaunt", sort: 65, categories: [], badges: 5, blocks: []},
+ {name: "Magneton", sort: 66, categories: [], badges: 5, blocks: []},
+ {name: "Electrode", sort: 67, categories: [], badges: 5, blocks: []},
+ {name: "Kecleon", sort: 68, categories: [], badges: 5, blocks: []},
+ {name: "Tropius", sort: 69, categories: [], badges: 5, blocks: []},
+ {name: "Milotic", sort: 70, categories: [], badges: 5, blocks: []},
+ {name: "Castform", sort: 71, categories: [], badges: 5, blocks: []},
+ {name: "Absol", sort: 72, categories: [], badges: 6, blocks: []},
+ {name: "Banette", sort: 73, categories: [], badges: 6, blocks: []},
+ {name: "Dusclops", sort: 74, categories: [], badges: 6, blocks: []},
+ {name: "Medicham", sort: 75, categories: [], badges: 6, blocks: []},
+ {name: "Ninetales", sort: 76, categories: [], badges: 6, blocks: []},
+ {name: "Chimecho", sort: 77, categories: [], badges: 6, blocks: []},
+ {name: "Girafarig", sort: 78, categories: [], badges: 6, blocks: []},
+ {name: "Dodrio", sort: 79, categories: [], badges: 6, blocks: []},
+ {name: "Xatu", sort: 80, categories: [], badges: 6, blocks: []},
+ {name: "Raichu", sort: 81, categories: [], badges: 6, blocks: []},
+ {name: "Golduck", sort: 82, categories: [], badges: 6, blocks: []},
+ {name: "Rhydon", sort: 83, categories: [], badges: 6, blocks: []},
+ {name: "Pinsir", sort: 84, categories: [], badges: 6, blocks: []},
+ {name: "Heracross", sort: 85, categories: [], badges: 6, blocks: []},
+ {name: "Donphan", sort: 86, categories: [], badges: 6, blocks: []},
+ {name: "Starmie", sort: 87, categories: [], badges: 7, blocks: []},
+ {name: "Seadra", sort: 88, categories: ["Trade1"], badges: 7, blocks: []},
+ {name: "Kingdra", sort: 89, categories: ["Trade2"], badges: 7, blocks: []},
+ {name: "Clamperl", sort: 90, categories: ["Trade1"], badges: 7, blocks: []},
+ {name: "Huntail", sort: 91, categories: ["Trade2"], badges: 7, blocks: ["Gorebyss"]},
+ {name: "Gorebyss", sort: 92, categories: ["Trade2"], badges: 7, blocks: ["Huntail"]},
+ {name: "Lanturn", sort: 93, categories: [], badges: 7, blocks: []},
+ {name: "Relicanth", sort: 94, categories: [], badges: 7, blocks: []},
+ {name: "Walrein", sort: 95, categories: [], badges: 7, blocks: []},
+ {name: "Glalie", sort: 96, categories: [], badges: 7, blocks: []},
+ {name: "Luvdisc", sort: 97, categories: [], badges: 7, blocks: []},
+ {name: "Corsola", sort: 98, categories: [], badges: 7, blocks: []},
+ {name: "Kyogre", sort: 99, categories: [], badges: 7, blocks: []},
+ {name: "Salamence", sort: 100, categories: [], badges: 8, blocks: []},
+ {name: "Regirock", sort: 101, categories: [], badges: 8, blocks: []},
+ {name: "Regice", sort: 102, categories: [], badges: 8, blocks: []},
+ {name: "Registeel", sort: 103, categories: [], badges: 8, blocks: []},
+],
+emerald: [{name: "Sceptile", sort: 1, categories: ["Starter"], badges: 0, blocks: ["Blaziken", "Swampert"]},
+ {name: "Blaziken", sort: 2, categories: ["Starter"], badges: 0, blocks: ["Sceptile", "Swampert"]},
+ {name: "Swampert", sort: 3, categories: ["Starter"], badges: 0, blocks: ["Sceptile", "Blaziken"]},
+ {name: "Mightyena", sort: 4, categories: [], badges: 0, blocks: []},
+ {name: "Beautifly", sort: 5, categories: [], badges: 0, blocks: []},
+ {name: "Dustox", sort: 6, categories: [], badges: 0, blocks: []},
+ {name: "Linoone", sort: 7, categories: [], badges: 0, blocks: []},
+ {name: "Pelipper", sort: 8, categories: [], badges: 0, blocks: []},
+ {name: "Ludicolo", sort: 9, categories: [], badges: 0, blocks: []},
+ {name: "Gardevoir", sort: 10, categories: [], badges: 0, blocks: []},
+ {name: "Shiftry", sort: 11, categories: [], badges: 0, blocks: []},
+ {name: "Azumarill", sort: 12, categories: [], badges: 0, blocks: []},
+ {name: "Swellow", sort: 13, categories: [], badges: 0, blocks: []},
+ {name: "Breloom", sort: 14, categories: [], badges: 0, blocks: []},
+ {name: "Slaking", sort: 15, categories: [], badges: 0, blocks: []},
+ {name: "Exploud", sort: 16, categories: [], badges: 0, blocks: []},
+ {name: "Ninjask", sort: 17, categories: [], badges: 0, blocks: []},
+ {name: "Shedinja", sort: 18, categories: [], badges: 0, blocks: []},
+ {name: "Kadabra", sort: 19, categories: ["Trade1"], badges: 0, blocks: []},
+ {name: "Alakazam", sort: 20, categories: ["Trade2"], badges: 0, blocks: []},
+ {name: "Delcatty", sort: 21, categories: [], badges: 0, blocks: ["Wigglytuff"]},
+ {name: "Gyarados", sort: 22, categories: [], badges: 1, blocks: []},
+ {name: "Tentacruel", sort: 23, categories: [], badges: 1, blocks: []},
+ {name: "Seaking", sort: 24, categories: [], badges: 1, blocks: []},
+ {name: "Hariyama", sort: 25, categories: [], badges: 2, blocks: []},
+ {name: "Crobat", sort: 26, categories: [], badges: 2, blocks: []},
+ {name: "Graveler", sort: 27, categories: ["Trade1"], badges: 2, blocks: []},
+ {name: "Golem", sort: 28, categories: ["Trade2"], badges: 2, blocks: []},
+ {name: "Aggron", sort: 29, categories: [], badges: 2, blocks: []},
+ {name: "Sableye", sort: 30, categories: [], badges: 2, blocks: []},
+ {name: "Manectric", sort: 31, categories: [], badges: 2, blocks: []},
+ {name: "Minun", sort: 32, categories: [], badges: 2, blocks: []},
+ {name: "Swalot", sort: 33, categories: [], badges: 2, blocks: []},
+ {name: "Vileplume", sort: 34, categories: [], badges: 2, blocks: []},
+ {name: "Bellossom", sort: 35, categories: [], badges: 2, blocks: []},
+ {name: "Plusle", sort: 36, categories: [], badges: 2, blocks: []},
+ {name: "Nosepass", sort: 37, categories: [], badges: 3, blocks: []},
+ {name: "Illumise", sort: 38, categories: [], badges: 3, blocks: []},
+ {name: "Volbeat", sort: 39, categories: [], badges: 3, blocks: []},
+ {name: "Camerupt", sort: 40, categories: [], badges: 3, blocks: []},
+ {name: "Machoke", sort: 41, categories: ["Trade1"], badges: 3, blocks: []},
+ {name: "Machamp", sort: 42, categories: ["Trade2"], badges: 3, blocks: []},
+ {name: "Weezing", sort: 43, categories: [], badges: 3, blocks: []},
+ {name: "Torkoal", sort: 44, categories: [], badges: 3, blocks: []},
+ {name: "Magcargo", sort: 45, categories: [], badges: 3, blocks: []},
+ {name: "Muk", sort: 46, categories: [], badges: 3, blocks: []},
+ {name: "Spinda", sort: 47, categories: [], badges: 3, blocks: []},
+ {name: "Skarmory", sort: 48, categories: [], badges: 3, blocks: []},
+ {name: "Altaria", sort: 49, categories: [], badges: 3, blocks: []},
+ {name: "Seviper", sort: 50, categories: [], badges: 3, blocks: []},
+ {name: "Solrock", sort: 51, categories: [], badges: 3, blocks: []},
+ {name: "Grumpig", sort: 52, categories: [], badges: 3, blocks: []},
+ {name: "Wobbuffet", sort: 53, categories: [], badges: 3, blocks: []},
+ {name: "Sandslash", sort: 54, categories: [], badges: 4, blocks: []},
+ {name: "Flygon", sort: 55, categories: [], badges: 4, blocks: []},
+ {name: "Claydol", sort: 56, categories: [], badges: 4, blocks: []},
+ {name: "Cacturne", sort: 57, categories: [], badges: 4, blocks: []},
+ {name: "Cradily", sort: 58, categories: [], badges: 4, blocks: ["Armaldo"]},
+ {name: "Armaldo", sort: 59, categories: [], badges: 4, blocks: ["Cradily"]},
+ {name: "Wigglytuff", sort: 60, categories: [], badges: 5, blocks: ["Delcatty"]}, 
+ {name: "Sharpedo", sort: 61, categories: [], badges: 5, blocks: []},
+ {name: "Wailord", sort: 62, categories: [], badges: 5, blocks: []},
+ {name: "Whiscash", sort: 63, categories: [], badges: 5, blocks: []},
+ {name: "Crawdaunt", sort: 64, categories: [], badges: 5, blocks: []},
+ {name: "Magneton", sort: 65, categories: [], badges: 5, blocks: []},
+ {name: "Electrode", sort: 66, categories: [], badges: 5, blocks: []},
+ {name: "Kecleon", sort: 67, categories: [], badges: 5, blocks: []},
+ {name: "Tropius", sort: 68, categories: [], badges: 5, blocks: []},
+ {name: "Milotic", sort: 69, categories: [], badges: 5, blocks: []},
+ {name: "Castform", sort: 70, categories: [], badges: 5, blocks: []},
+ {name: "Absol", sort: 71, categories: [], badges: 6, blocks: []},
+ {name: "Dusclops", sort: 72, categories: [], badges: 6, blocks: []},
+ {name: "Banette", sort: 73, categories: [], badges: 6, blocks: []},
+ {name: "Ninetales", sort: 74, categories: [], badges: 6, blocks: []},
+ {name: "Chimecho", sort: 75, categories: [], badges: 6, blocks: []},
+ {name: "Girafarig", sort: 76, categories: [], badges: 6, blocks: []},
+ {name: "Dodrio", sort: 77, categories: [], badges: 6, blocks: []},
+ {name: "Xatu", sort: 78, categories: [], badges: 6, blocks: []},
+ {name: "Raichu", sort: 79, categories: [], badges: 6, blocks: []},
+ {name: "Golduck", sort: 80, categories: [], badges: 6, blocks: []},
+ {name: "Rhydon", sort: 81, categories: [], badges: 6, blocks: []},
+ {name: "Pinsir", sort: 82, categories: [], badges: 6, blocks: []},
+ {name: "Heracross", sort: 83, categories: [], badges: 6, blocks: []},
+ {name: "Donphan", sort: 84, categories: [], badges: 6, blocks: []},
+ {name: "Starmie", sort: 85, categories: [], badges: 7, blocks: []},
+ {name: "Seadra", sort: 86, categories: ["Trade1"], badges: 7, blocks: []},
+ {name: "Kingdra", sort: 87, categories: ["Trade2"], badges: 7, blocks: []},
+ {name: "Clamperl", sort: 88, categories: ["Trade1"], badges: 7, blocks: []},
+ {name: "Huntail", sort: 89, categories: ["Trade2"], badges: 7, blocks: ["Gorebyss"]},
+ {name: "Gorebyss", sort: 90, categories: ["Trade2"], badges: 7, blocks: ["Huntail"]},
+ {name: "Lanturn", sort: 91, categories: [], badges: 7, blocks: []},
+ {name: "Relicanth", sort: 92, categories: [], badges: 7, blocks: []},
+ {name: "Walrein", sort: 93, categories: [], badges: 7, blocks: []},
+ {name: "Glalie", sort: 94, categories: [], badges: 7, blocks: []},
+ {name: "Luvdisc", sort: 95, categories: [], badges: 7, blocks: []},
+ {name: "Corsola", sort: 96, categories: [], badges: 7, blocks: []},
+ {name: "Rayquaza", sort: 97, categories: [], badges: 7, blocks: []},
+ {name: "Salamence", sort: 98, categories: [], badges: 8, blocks: []},
+ {name: "Regirock", sort: 99, categories: [], badges: 8, blocks: []},
+ {name: "Regice", sort: 100, categories: [], badges: 8, blocks: []},
+ {name: "Registeel", sort: 101, categories: [], badges: 8, blocks: []},
+ {name: "Mawile", sort: 102, categories: [], badges: 8, blocks: []}
+],
+ fireRed: [{name: "Venusaur", sort: 1, categories: ["Starter"], badges: 0, blocks: ["Charizard", "Blastoise"]},
+ {name: "Charizard", sort: 2, categories: ["Starter"], badges: 0, blocks: ["Venusaur", "Blastoise"]},
+ {name: "Blastoise", sort: 3, categories: ["Starter"], badges: 0, blocks: ["Venusaur", "Charizard"]},
+ {name: "Pidgeot", sort: 4, categories: [], badges: 0, blocks: []},
+ {name: "Raticate", sort: 5, categories: [], badges: 0, blocks: []},
+ {name: "Fearow", sort: 6, categories: [], badges: 0, blocks: []},
+ {name: "Primeape", sort: 7, categories: [], badges: 0, blocks: []},
+ {name: "Butterfree", sort: 8, categories: [], badges: 0, blocks: []},
+ {name: "Beedrill", sort: 9, categories: [], badges: 0, blocks: []},
+ {name: "Raichu", sort: 10, categories: [], badges: 0, blocks: []},
+ {name: "Nidoking", sort: 11, categories: [], badges: 0, blocks: []},
+ {name: "Wigglytuff", sort: 12, categories: [], badges: 1, blocks: []},
+ {name: "Nidoqueen", sort: 13, categories: [], badges: 0, blocks: []},
+ {name: "Gyarados", sort: 14, categories: [], badges: 1, blocks: []},
+ {name: "Golbat", sort: 15, categories: [], badges: 1, blocks: []},
+ {name: "Graveler", sort: 16, categories: ["Trade1"], badges: 1, blocks: []},
+ {name: "Golem", sort: 17, categories: ["Trade2"], badges: 1, blocks: []},
+ {name: "Parasect", sort: 18, categories: [], badges: 1, blocks: []},
+ {name: "Clefable", sort: 19, categories: [], badges: 1, blocks: []},
+ {name: "Arbok", sort: 20, categories: [], badges: 1, blocks: []},
+ {name: "Vileplume", sort: 21, categories: [], badges: 1, blocks: []},
+ {name: "Kadabra", sort: 22, categories: ["Trade1"], badges: 1, blocks: []},
+ {name: "Alakazam", sort: 23, categories: ["Trade2"], badges: 1, blocks: []},
+ {name: "Persian", sort: 24, categories: [], badges: 2, blocks: []},
+ {name: "Farfetch'd", sort: 25, categories: [], badges: 2, blocks: []},
+ {name: "Hypno", sort: 26, categories: [], badges: 2, blocks: []},
+ {name: "Dugtrio", sort: 27, categories: [], badges: 2, blocks: []},
+ {name: "Mr. Mime", sort: 28, categories: [], badges: 2, blocks: []},
+ {name: "Electrode", sort: 29, categories: [], badges: 3, blocks: []},
+ {name: "Machoke", sort: 30, categories: ["Trade1"], badges: 3, blocks: []},
+ {name: "Machamp", sort: 31, categories: ["Trade2"], badges: 3, blocks: []},
+ {name: "Onix", sort: 32, categories: [], badges: 3, blocks: []},
+ {name: "Arcanine", sort: 33, categories: [], badges: 3, blocks: []},
+ {name: "Vaporeon", sort: 34, categories: [], badges: 3, blocks: ["Jolteon", "Flareon"]},
+ {name: "Jolteon", sort: 35, categories: [], badges: 3, blocks: ["Vaporeon", "Flareon"]},
+ {name: "Flareon", sort: 36, categories: [], badges: 3, blocks: ["Vaporeon", "Jolteon"]},
+ {name: "Dragonite", sort: 37, categories: [], badges: 3, blocks: []},
+ {name: "Scyther", sort: 38, categories: [], badges: 3, blocks: []},
+ {name: "Porygon", sort: 39, categories: [], badges: 3, blocks: []},
+ {name: "Dodrio", sort: 40, categories: [], badges: 3, blocks: []},
+ {name: "Hitmonlee", sort: 41, categories: [], badges: 3, blocks: ["Hitmonchan"]},
+ {name: "Hitmonchan", sort: 42, categories: [], badges: 3, blocks: ["Hitmonlee"]},
+ {name: "Haunter", sort: 43, categories: ["Trade1"], badges: 4, blocks: []},
+ {name: "Gengar", sort: 44, categories: ["Trade2"], badges: 4, blocks: []},
+ {name: "Marowak", sort: 45, categories: [], badges: 4, blocks: []},
+ {name: "Snorlax", sort: 46, categories: [], badges: 4, blocks: []},
+ {name: "Venomoth", sort: 47, categories: [], badges: 4, blocks: []},
+ {name: "Ditto", sort: 48, categories: [], badges: 4, blocks: []},
+ {name: "Poliwrath", sort: 49, categories: [], badges: 4, blocks: []},
+ {name: "Kingler", sort: 50, categories: [], badges: 4, blocks: []},
+ {name: "Seadra", sort: 51, categories: [], badges: 4, blocks: []},
+ {name: "Seaking", sort: 52, categories: [], badges: 4, blocks: []},
+ {name: "Jynx", sort: 53, categories: [], badges: 4, blocks: []},
+ {name: "Golduck", sort: 54, categories: [], badges: 4, blocks: []},
+ {name: "Cloyster", sort: 55, categories: [], badges: 4, blocks: []},
+ {name: "Muk", sort: 56, categories: [], badges: 4, blocks: []},
+ {name: "Lickitung", sort: 57, categories: [], badges: 4, blocks: []},
+ {name: "Exeggutor", sort: 58, categories: [], badges: 4, blocks: []},
+ {name: "Rhydon", sort: 59, categories: [], badges: 4, blocks: []},
+ {name: "Kangaskhan", sort: 60, categories: [], badges: 4, blocks: []},
+ {name: "Chansey", sort: 61, categories: [], badges: 4, blocks: []},
+ {name: "Tauros", sort: 62, categories: [], badges: 4, blocks: []},
+ {name: "Tentacruel", sort: 63, categories: [], badges: 5, blocks: []},
+ {name: "Weezing", sort: 64, categories: [], badges: 5, blocks: []},
+ {name: "Tangela", sort: 65, categories: [], badges: 5, blocks: []},
+ {name: "Dewgong", sort: 66, categories: [], badges: 5, blocks: []},
+ {name: "Articuno", sort: 67, categories: ["Legendary"], badges: 5, blocks: []},
+ {name: "Magneton", sort: 68, categories: [], badges: 5, blocks: []},
+ {name: "Electabuzz", sort: 69, categories: [], badges: 5, blocks: []},
+ {name: "Zapdos", sort: 70, categories: ["Legendary"], badges: 5, blocks: []},
+ {name: "Lapras", sort: 71, categories: [], badges: 5, blocks: []},
+ {name: "Omastar", sort: 72, categories: [], badges: 6, blocks: ["Kabutops"]},
+ {name: "Kabutops", sort: 73, categories: [], badges: 6, blocks: ["Omastar"]},
+ {name: "Aerodactyl", sort: 74, categories: [], badges: 6, blocks: []},
+ {name: "Rapidash", sort: 75, categories: [], badges: 6, blocks: []},
+ {name: "Moltres", sort: 76, categories: ["Legendary"], badges: 7, blocks: []}
+],
+ leafGreen: [{name: "Venusaur", sort: 1, categories: ["Starter"], badges: 0, blocks: ["Charizard", "Blastoise"]},
+ {name: "Charizard", sort: 2, categories: ["Starter"], badges: 0, blocks: ["Venusaur", "Blastoise"]},
+ {name: "Blastoise", sort: 3, categories: ["Starter"], badges: 0, blocks: ["Venusaur", "Charizard"]},
+ {name: "Pidgeot", sort: 4, categories: [], badges: 0, blocks: []},
+ {name: "Raticate", sort: 5, categories: [], badges: 0, blocks: []},
+ {name: "Fearow", sort: 6, categories: [], badges: 0, blocks: []},
+ {name: "Primeape", sort: 7, categories: [], badges: 0, blocks: []},
+ {name: "Butterfree", sort: 8, categories: [], badges: 0, blocks: []},
+ {name: "Beedrill", sort: 9, categories: [], badges: 0, blocks: []},
+ {name: "Raichu", sort: 10, categories: [], badges: 0, blocks: []},
+ {name: "Nidoqueen", sort: 11, categories: [], badges: 0, blocks: []},
+ {name: "Wigglytuff", sort: 12, categories: [], badges: 1, blocks: []},
+ {name: "Nidoking", sort: 13, categories: [], badges: 0, blocks: []},
+ {name: "Gyarados", sort: 14, categories: [], badges: 1, blocks: []},
+ {name: "Golbat", sort: 15, categories: [], badges: 1, blocks: []},
+ {name: "Graveler", sort: 16, categories: ["Trade1"], badges: 1, blocks: []},
+ {name: "Golem", sort: 17, categories: ["Trade2"], badges: 1, blocks: []},
+ {name: "Parasect", sort: 18, categories: [], badges: 1, blocks: []},
+ {name: "Clefable", sort: 19, categories: [], badges: 1, blocks: []},
+ {name: "Sandslash", sort: 20, categories: [], badges: 1, blocks: []},
+ {name: "Victreebel", sort: 21, categories: [], badges: 1, blocks: []},
+ {name: "Kadabra", sort: 22, categories: ["Trade1"], badges: 1, blocks: []},
+ {name: "Alakazam", sort: 23, categories: ["Trade2"], badges: 1, blocks: []},
+ {name: "Persian", sort: 24, categories: [], badges: 2, blocks: []},
+ {name: "Farfetch'd", sort: 25, categories: [], badges: 2, blocks: []},
+ {name: "Hypno", sort: 26, categories: [], badges: 2, blocks: []},
+ {name: "Dugtrio", sort: 27, categories: [], badges: 2, blocks: []},
+ {name: "Mr. Mime", sort: 28, categories: [], badges: 2, blocks: []},
+ {name: "Electrode", sort: 29, categories: [], badges: 3, blocks: []},
+ {name: "Machoke", sort: 30, categories: ["Trade1"], badges: 3, blocks: []},
+ {name: "Machamp", sort: 31, categories: ["Trade2"], badges: 3, blocks: []},
+ {name: "Onix", sort: 32, categories: [], badges: 3, blocks: []},
+ {name: "Ninetales", sort: 33, categories: [], badges: 3, blocks: []},
+ {name: "Vaporeon", sort: 34, categories: [], badges: 3, blocks: ["Jolteon", "Flareon"]},
+ {name: "Jolteon", sort: 35, categories: [], badges: 3, blocks: ["Vaporeon", "Flareon"]},
+ {name: "Flareon", sort: 36, categories: [], badges: 3, blocks: ["Vaporeon", "Jolteon"]},
+ {name: "Pinsir", sort: 37, categories: [], badges: 3, blocks: []},
+ {name: "Dragonite", sort: 38, categories: [], badges: 3, blocks: []},
+ {name: "Porygon", sort: 39, categories: [], badges: 3, blocks: []},
+ {name: "Dodrio", sort: 40, categories: [], badges: 3, blocks: []},
+ {name: "Hitmonlee", sort: 41, categories: [], badges: 3, blocks: ["Hitmonchan"]},
+ {name: "Hitmonchan", sort: 42, categories: [], badges: 3, blocks: ["Hitmonlee"]},
+ {name: "Haunter", sort: 43, categories: ["Trade1"], badges: 4, blocks: []},
+ {name: "Gengar", sort: 44, categories: ["Trade2"], badges: 4, blocks: []},
+ {name: "Marowak", sort: 45, categories: [], badges: 4, blocks: []},
+ {name: "Snorlax", sort: 46, categories: [], badges: 4, blocks: []},
+ {name: "Venomoth", sort: 47, categories: [], badges: 4, blocks: []},
+ {name: "Ditto", sort: 48, categories: [], badges: 4, blocks: []},
+ {name: "Poliwrath", sort: 49, categories: [], badges: 4, blocks: []},
+ {name: "Kingler", sort: 50, categories: [], badges: 4, blocks: []},
+ {name: "Seadra", sort: 51, categories: [], badges: 4, blocks: []},
+ {name: "Seaking", sort: 52, categories: [], badges: 4, blocks: []},
+ {name: "Jynx", sort: 53, categories: [], badges: 4, blocks: []},
+ {name: "Slowbro", sort: 54, categories: [], badges: 4, blocks: []},
+ {name: "Starmie", sort: 55, categories: [], badges: 4, blocks: []},
+ {name: "Muk", sort: 56, categories: [], badges: 4, blocks: []},
+ {name: "Lickitung", sort: 57, categories: [], badges: 4, blocks: []},
+ {name: "Exeggutor", sort: 58, categories: [], badges: 4, blocks: []},
+ {name: "Rhydon", sort: 59, categories: [], badges: 4, blocks: []},
+ {name: "Kangaskhan", sort: 60, categories: [], badges: 4, blocks: []},
+ {name: "Chansey", sort: 61, categories: [], badges: 4, blocks: []},
+ {name: "Tauros", sort: 62, categories: [], badges: 4, blocks: []},
+ {name: "Tentacruel", sort: 63, categories: [], badges: 5, blocks: []},
+ {name: "Weezing", sort: 64, categories: [], badges: 5, blocks: []},
+ {name: "Tangela", sort: 65, categories: [], badges: 5, blocks: []},
+ {name: "Dewgong", sort: 66, categories: [], badges: 5, blocks: []},
+ {name: "Articuno", sort: 67, categories: ["Legendary"], badges: 5, blocks: []},
+ {name: "Magneton", sort: 68, categories: [], badges: 5, blocks: []},
+ {name: "Zapdos", sort: 69, categories: ["Legendary"], badges: 5, blocks: []},
+ {name: "Lapras", sort: 70, categories: [], badges: 5, blocks: []},
+ {name: "Omastar", sort: 71, categories: [], badges: 6, blocks: ["Kabutops"]},
+ {name: "Kabutops", sort: 72, categories: [], badges: 6, blocks: ["Omastar"]},
+ {name: "Aerodactyl", sort: 73, categories: [], badges: 6, blocks: []},
+ {name: "Rapidash", sort: 74, categories: [], badges: 6, blocks: []},
+ {name: "Magmar", sort: 65, categories: [], badges: 7, blocks: []},
+ {name: "Moltres", sort: 76, categories: ["Legendary"], badges: 7, blocks: []}
+]};
+
+var typelist =
+{"Venusaur": ["Grass", "Poison"],
+ "Charizard": ["Fire", "Flying"],
+ "Blastoise": ["Water"],
+ "Butterfree": ["Bug", "Flying"],
+ "Beedrill": ["Bug", "Poison"],
+ "Pidgeot": ["Normal", "Flying"],
+ "Raticate": ["Normal"],
+ "Fearow": ["Normal", "Flying"],
+ "Arbok": ["Poison"],
+ "Raichu": ["Electric"],
+ "Sandslash": ["Ground"],
+ "Nidoqueen": ["Poison", "Ground"],
+ "Nidoking": ["Poison", "Ground"],
+ "Clefable": ["Fairy"],
+ "Ninetales": ["Fire"],
+ "Wigglytuff": ["Normal", "Fairy"],
+ "Golbat": ["Poison", "Flying"],
+ "Vileplume": ["Grass", "Poison"],
+ "Parasect": ["Bug", "Grass"],
+ "Venomoth": ["Bug", "Poison"],
+ "Dugtrio": ["Ground"],
+ "Persian": ["Normal"],
+ "Golduck": ["Water"],
+ "Primeape": ["Fighting"],
+ "Arcanine": ["Fire"],
+ "Poliwrath": ["Water", "Fighting"],
+ "Kadabra": ["Psychic"],
+ "Alakazam": ["Psychic"],
+ "Machoke": ["Fighting"],
+ "Machamp": ["Fighting"],
+ "Victreebel": ["Grass", "Poison"],
+ "Tentacruel": ["Water", "Poison"],
+ "Graveler": ["Rock", "Ground"],
+ "Golem": ["Rock", "Ground"],
+ "Rapidash": ["Fire"],
+ "Slowbro": ["Water", "Psychic"],
+ "Magneton": ["Electric", "Steel"],
+ "Farfetch'd": ["Normal", "Flying"],
+ "Dodrio": ["Normal", "Flying"],
+ "Dewgong": ["Water", "Ice"],
+ "Muk": ["Poison"],
+ "Cloyster": ["Water", "Ice"],
+ "Haunter": ["Ghost", "Poison"],
+ "Gengar": ["Ghost", "Poison"],
+ "Onix": ["Rock", "Ground"],
+ "Hypno": ["Psychic"],
+ "Kingler": ["Water"],
+ "Electrode": ["Electric"],
+ "Exeggutor": ["Grass", "Psychic"],
+ "Marowak": ["Ground"],
+ "Hitmonlee": ["Fighting"],
+ "Hitmonchan": ["Fighting"],
+ "Lickitung": ["Normal"],
+ "Weezing": ["Poison"],
+ "Rhydon": ["Ground", "Rock"],
+ "Chansey": ["Normal"],
+ "Tangela": ["Grass"],
+ "Kangaskhan": ["Normal"],
+ "Seadra": ["Water"],
+ "Seaking": ["Water"],
+ "Starmie": ["Water", "Psychic"],
+ "Mr. Mime": ["Psychic", "Fairy"],
+ "Scyther": ["Bug", "Flying"],
+ "Jynx": ["Ice", "Psychic"],
+ "Electabuzz": ["Electric"],
+ "Magmar": ["Fire"],
+ "Pinsir": ["Bug"],
+ "Tauros": ["Normal"],
+ "Gyarados": ["Water", "Flying"],
+ "Lapras": ["Water", "Ice"],
+ "Ditto": ["Normal"],
+ "Vaporeon": ["Water"],
+ "Jolteon": ["Electric"],
+ "Flareon": ["Fire"],
+ "Porygon": ["Normal"],
+ "Omastar": ["Rock", "Water"],
+ "Kabutops": ["Rock", "Water"],
+ "Aerodactyl": ["Rock", "Flying"],
+ "Snorlax": ["Normal"],
+ "Articuno": ["Ice", "Flying"],
+ "Zapdos": ["Electric", "Flying"],
+ "Moltres": ["Fire", "Flying"],
+ "Dragonite": ["Dragon", "Flying"],
+ "Meganimum": ["Grass"],
+ "Typhlosion": ["Fire"],
+ "Feraligatr": ["Water"],
+ "Furret": ["Normal"],
+ "Noctowl": ["Normal", "Flying"],
+ "Ledyba": ["Bug", "Flying"],
+ "Ariados": ["Bug", "Poison"],
+ "Crobat": ["Poison", "Flying"],
+ "Lanturn": ["Water", "Electric"],
+ "Togetic": ["Fairy", "Flying"],
+ "Xatu": ["Psychic", "Flying"],
+ "Ampharos": ["Electric"],
+ "Bellossom": ["Grass"],
+ "Azumarill": ["Water", "Fairy"],
+ "Sudowoodo": ["Rock"],
+ "Politoed": ["Water"],
+ "Jumpluff": ["Grass", "Flying"],
+ "Aipom": ["Normal"],
+ "Sunflora": ["Grass"],
+ "Yanma": ["Bug", "Flying"],
+ "Quagsire": ["Water", "Ground"],
+ "Espeon": ["Psychic"],
+ "Umbreon": ["Dark"],
+ "Murkrow": ["Dark", "Flying"],
+ "Slowking": ["Water", "Psychic"],
+ "Misdreavus": ["Ghost"],
+ "Unown": ["Psychic"],
+ "Wobbuffet": ["Psychic"],
+ "Girafarig": ["Normal", "Psychic"],
+ "Forretress": ["Bug", "Steel"],
+ "Dunsparce": ["Normal"],
+ "Gligar": ["Ground", "Flying"],
+ "Steelix": ["Steel", "Ground"],
+ "Granbull": ["Fairy"],
+ "Qwilfish": ["Water", "Poison"],
+ "Scizor": ["Bug", "Steel"],
+ "Shuckle": ["Bug", "Rock"],
+ "Heracross": ["Bug", "Fighting"],
+ "Sneasel": ["Dark", "Ice"],
+ "Ursaring": ["Normal"],
+ "Magcargo": ["Fire", "Rock"],
+ "Piloswine": ["Ice", "Ground"],
+ "Corsola": ["Water", "Rock"],
+ "Octillery": ["Water"],
+ "Delibird": ["Ice", "Flying"],
+ "Mantine": ["Water", "Flying"],
+ "Skarmory": ["Steel", "Flying"],
+ "Houndoom": ["Dark", "Fire"],
+ "Kingdra": ["Water", "Dragon"],
+ "Donphan": ["Ground"],
+ "Porygon2": ["Normal"],
+ "Stantler": ["Normal"],
+ "Smeargle": ["Normal"],
+ "Hitmontop": ["Fighting"],
+ "Miltank": ["Normal"],
+ "Blissey": ["Normal"],
+ "Raikou": ["Electric"],
+ "Entei": ["Fire"],
+ "Suicune": ["Water"],
+ "Tyranitar": ["Rock", "Dark"],
+ "Lugia": ["Psychic", "Flying"],
+ "Ho-Oh": ["Fire", "Flying"],
+ "Sceptile": ["Grass"],
+ "Blaziken": ["Fire", "Fighting"],
+ "Swampert": ["Water", "Ground"],
+ "Mightyena": ["Dark"],
+ "Linoone": ["Normal"],
+ "Beautifly": ["Bug", "Flying"],
+ "Dustox": ["Bug", "Poison"],
+ "Ludicolo": ["Water", "Grass"],
+ "Shiftry": ["Grass", "Dark"],
+ "Swellow": ["Normal", "Flying"],
+ "Pelipper": ["Water", "Flying"],
+ "Gardevoir": ["Psychic", "Fairy"],
+ "Masquerain": ["Bug", "Flying"],
+ "Breloom": ["Grass", "Flying"],
+ "Slaking": ["Normal"],
+ "Ninjask": ["Bug", "Flying"],
+ "Shedinja": ["Bug", "Ghost"],
+ "Exploud": ["Normal"],
+ "Hariyama": ["Fighting"],
+ "Nosepass": ["Rock"],
+ "Delcatty": ["Normal"],
+ "Sableye": ["Dark", "Ghost"],
+ "Mawile": ["Steel", "Fairy"],
+ "Aggron": ["Steel", "Rock"],
+ "Medicham": ["Fighting", "Psychic"],
+ "Manectric": ["Electric"],
+ "Plusle": ["Electric"],
+ "Minun": ["Electric"],
+ "Volbeat": ["Bug"],
+ "Illumise": ["Bug"],
+ "Roselia": ["Grass", "Poison"],
+ "Swalot": ["Poison"],
+ "Sharpedo": ["Water", "Dark"],
+ "Wailord": ["Water"],
+ "Camerupt": ["Fire", "Ground"],
+ "Torkoal": ["Fire"],
+ "Grumpig": ["Psychic"],
+ "Spinda": ["Normal"],
+ "Flygon": ["Ground", "Dragon"],
+ "Cacturne": ["Grass", "Dark"],
+ "Altaria": ["Dragon", "Flying"],
+ "Zangoose": ["Normal"],
+ "Seviper": ["Poison"],
+ "Lunatone": ["Rock", "Psychic"],
+ "Solrock": ["Rock", "Psychic"],
+ "Whiscash": ["Water", "Ground"],
+ "Crawdaunt": ["Water", "Dark"],
+ "Claydol": ["Ground", "Psychic"],
+ "Cradily": ["Rock", "Grass"],
+ "Armalod": ["Rock", "Bug"],
+ "Milotic": ["Water"],
+ "Castform": ["Normal"],
+ "Kecleon": ["Normal"],
+ "Banette": ["Ghost"],
+ "Dusclops": ["Ghost"],
+ "Tropius": ["Grass", "Flying"],
+ "Chimecho": ["Psychic"],
+ "Absol": ["Dark"],
+ "Glalie": ["Ice"],
+ "Walrein": ["Ice", "Water"],
+ "Clamperl": ["Water"],
+ "Huntail": ["Water"],
+ "Gorebyss": ["Water"],
+ "Relicanth": ["Water", "Rock"],
+ "Luvdisc": ["Water"],
+ "Salamence": ["Dragon", "Flying"],
+ "Metagross": ["Steel", "Psychic"],
+ "Regirock": ["Rock"],
+ "Regice": ["Ice"],
+ "Registeel": ["Steel"],
+ "Kyogre": ["Water"],
+ "Groudon": ["Groudon"],
+ "Rayquaza": ["Dragon", "Flying"]
+};
+
+function starterChange()
+{
+	var maxBadge = document.getElementById("johto").hidden ? 8 : 16;
+
+	var min = document.getElementById("starterGuarantee").checked ? 1 : 0;
+
+	for (var i = 1; i <= maxBadge; i++)
+	{
+		refreshBadgeDropdown(i, min);
+		min = document.getElementById("badge" + i).value;
+	}
+}
+
+function gameChange()
+{
+	var game = document.getElementById("game").value;
+	if (game == "gold" || game == "silver" || game == "crystal")
+	{
+		document.getElementById("johto").hidden = false;
+		var min = document.getElementById("starterGuarantee").checked ? 1 : 0;
+		var badge8 = document.getElementById("badge8").value;
+		if (badge8 > min)
+			min = badge8;
+		for (var i = 9; i <= 16; i++)
+		{
+			refreshBadgeDropdown(i, min);
+		}
+	}
+	else
+	{
+		document.getElementById("johto").hidden = true;
+		var min = document.getElementById("starterGuarantee").checked ? 1 : 0;
+		for (var i = 9; i <= 16; i++)
+		{
+			refreshBadgeDropdown(i, min);
+			document.getElementById("badge" + i).value = min;
+		}
+	}
+
+	var team = document.getElementById("team");
+			
+	if (game == "ruby" || game == "sapphire" || game == "emerald" || game == "fireRed" || game == "leafGreen")
+	{
+		team.height = 64;
+		team.width = 384;
+	}
+	else
+	{
+		team.height = 56;
+		team.width = 336;
+	}
+}
+
+function updateBadges(badge)
+{
+	var maxBadge = document.getElementById("johto").hidden ? 8 : 16;
+
+	var start = document.getElementById("starterGuarantee").checked ? 1 : 0;
+	var min = Math.max(document.getElementById("badge" + badge).value, start);
+	for (var i = badge + 1; i <= maxBadge; i++)
+		refreshBadgeDropdown(i, min);
+}
+
+function refreshBadgeDropdown(badge, min)
+{
+	var select = document.getElementById("badge" + badge);
+	var selected = select.value;
+	for (var j = select.length - 1; j >= 0; j--)
+		select.remove(j);
+	for (var j = min; j <= 6; j++)
+	{
+		var option = document.createElement("option");
+		option.text = j;
+		option.value = j;
+		select.add(option);
+	}
+
+	if (selected >= min)
+		select.value = selected;
+}
+
+function generate()
+{
+	var game = document.getElementById("game").value;
+	var pokemon = (JSON.parse(JSON.stringify(allpokemon)))[game];
+
+	pokemon = pokemon.filter(function(a) { return !document.getElementById("blacklist").value.split("\n").includes(a.name) });
+
+	if (document.getElementById("starterDisallow").checked)
+		pokemon = pokemon.filter(function(a) { return !a.categories.includes("Starter") });
+
+	if (!document.getElementById("tradeDisallowEvolving").checked)
+		pokemon = pokemon.filter(function(a) { return !a.categories.includes("Trade1") });
+	if (!document.getElementById("tradeAllow").checked)
+		pokemon = pokemon.filter(function(a) { return !a.categories.includes("Trade2") });
+
+	if (document.getElementById("legendaryDisallow").checked)
+		pokemon = pokemon.filter(function(a) { return !a.categories.includes("Legendary") });
+
+	var starters = pokemon.filter(function(a) { return a.categories.includes("Starter") });
+
+	var result = [];
+	while (result.length < 6)
+	{
+		var list = pokemon;
+		var maxBadge = document.getElementById("johto").hidden ? 8 : 16;
+		for (var i = 1; i <= maxBadge; i++)
+			if (document.getElementById("badge" + i).value > result.length)
+			{
+				list = list.filter(function(a) { return a.badges < i });
+				if (list.length == 0)
+				{
+					var team = document.getElementById("team");
+					team.getContext("2d").font = "18px sans-serif";
+					team.getContext("2d").clearRect(0, 0, team.width, team.height);
+					team.getContext("2d").fillText("This configuration is not possible. Try", 0, 18);
+					team.getContext("2d").fillText("making the badge requirements less", 0, 36);
+					team.getContext("2d").fillText("restrictive.", 0, 54);
+					return;
+				}
+				break;
+			}
+
+		if (result.length == 0 && document.getElementById("starterGuarantee").checked)
+			list = starters;
+
+		var next = list[Math.floor(Math.random() * list.length)];
+
+		pokemon.splice(pokemon.indexOf(next), 1);
+		for (var i = 0; i < next.blocks.length; i++)
+			for (var j = 0; j < pokemon.length; j++)
+				if (pokemon[j].name == next.blocks[i])
+					pokemon.splice(j, 1);
+
+		if (document.getElementById("typeDisallowExactMatch").checked)
+			pokemon = pokemon.filter(function(a) { return typeMatch(getPokemonType(a), getPokemonType(next)) != "full"; });
+		if (document.getElementById("typeDisallowOverlap").checked)
+			pokemon = pokemon.filter(function(a) { return typeMatch(getPokemonType(a), getPokemonType(next)) == "none"; });
+		result.push(next);
+	}
+	
+	result.sort(function(a, b) { return a.sort - b.sort});
+
+	var team = document.getElementById("team");
+	team.getContext("2d").clearRect(0, 0, team.width, team.height);
+	
+	var extension = ".png";
+	if (game == "gold" || game == "crystal")
+		extension = ".gif";
+
+	var size = 56;
+	if (game == "ruby" || game == "sapphire" || game == "emerald" || game == "fireRed" || game == "leafGreen")
+		size = 64;
+
+	var img1 = new Image(size, size);
+	img1.src = game + "/" + result[0].name + extension;
+  	img1.addEventListener('load', function(){ team.getContext("2d").drawImage(img1, 0, 0); });
+	var img2 = new Image(size, size);
+	img2.src = game + "/" + result[1].name + extension;
+  	img2.addEventListener('load', function(){ team.getContext("2d").drawImage(img2, size, 0); });
+	var img3 = new Image(size, size);
+	img3.src = game + "/" + result[2].name + extension;
+  	img3.addEventListener('load', function(){ team.getContext("2d").drawImage(img3, size * 2, 0); });
+	var img4 = new Image(size, size);
+	img4.src = game + "/" + result[3].name + extension;
+  	img4.addEventListener('load', function(){ team.getContext("2d").drawImage(img4, size * 3, 0); });
+	var img5 = new Image(size, size);
+	img5.src = game + "/" + result[4].name + extension;
+  	img5.addEventListener('load', function(){ team.getContext("2d").drawImage(img5, size * 4, 0); });
+	var img6 = new Image(size, size);
+	img6.src = game + "/" + result[5].name + extension;
+  	img6.addEventListener('load', function(){ team.getContext("2d").drawImage(img6, size * 5, 0); });
+}
+
+function drawImage(img, number)
+{
+	
+}
+
+function getPokemonType(pokemon)
+{
+	var game = document.getElementById("game").value;
+	var type = typelist[pokemon.name];
+	
+	if (["red", "blue", "yellow"].includes(game) && type.includes("Steel"))
+		type.splice(type.indexOf("Steel"), 1);
+	if (!["x", "y", "omegaRuby", "alphaSapphire", "sun", "moon",
+             "ultraSun", "ultraMoon", "letsgopikachu", "letsgoeevee",
+	     "sword", "shield", "brillantDiamond", "shiningPearl",
+	     "legendsArceus"].includes(game) && type.includes("Fairy"))
+	{
+		if (type.length == 1)
+			type = ["Normal"]
+		else if (type.indexOf("Fairy") == 0)
+			type.splice(0, 1, "Normal");
+		else
+			type.splice(1, 1);
+	}
+
+	return type;
+}
+
+function typeMatch(first, second)
+{
+	var overlap = first.filter(function(a) { return second.includes(a) });
+	if (first.length == second.length && first.length == overlap.length)
+		return "full";
+	else if (overlap.length > 0)
+		return "partial";
+	else
+		return "none";
+}
+
+</script>
+</body>
+</html>
