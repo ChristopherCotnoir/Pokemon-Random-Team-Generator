@@ -40,6 +40,7 @@ Often times when people construct in-game teams, they like to avoid duplicate ty
  - Allow
  - Disallow Exact Match
  - Disallow Overlap
+ 
 "Allow" doesn't take typing into account when generating teams, meaning duplicate types can appear. "Disallow Exact Match" is more restrictive. It prevents generating Pokemon with the exact same type combination, but does allow shared types. For example, Pelipper and Sharpedo would be allowed, while Pelipper and Gyarados would not. "Disallow Overlap" is the most restrictive option, preventing any Pokemon on the team from having any shared types.
 
 ### Blacklist
